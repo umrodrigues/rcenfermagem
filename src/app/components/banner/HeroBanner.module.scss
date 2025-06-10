@@ -1,0 +1,126 @@
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+
+  .slick-slider,
+  .slick-list,
+  .slick-track,
+  .banner {
+    height: 100%;
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.backgroundImage {
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 95, 51, 0.85);
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  text-align: left;
+  padding: 1rem 2rem;
+  color: white;
+  top: 30%;
+  left: 5%;
+  position: absolute;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    background: white;
+    color: #00693e;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+      background: #e2e2e2;
+    }
+  }
+}
+
+.arrow {
+  z-index: 4;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: white;
+  color: #00693e;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.left {
+    left: 16px;
+  }
+
+  &.right {
+    right: 16px;
+  }
+
+  &:hover {
+    background: #ccc;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    top: 20%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .arrow {
+    display: none;
+  }
+}

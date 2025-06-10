@@ -1,0 +1,139 @@
+.header {
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.topBar {
+  background-color: #0a3c23;
+  color: white;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.4rem 1rem;
+  flex-wrap: wrap;
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1rem;
+  }
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .navMenu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    a, span {
+      color: #000;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+
+      &:hover .dropdownContent {
+        display: flex;
+      }
+
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 0.5rem 1rem;
+        flex-direction: column;
+        white-space: nowrap;
+
+        a {
+          padding: 0.3rem 0;
+        }
+      }
+    }
+  }
+
+  .ctaButton {
+    background-color: #0a3c23;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #066632;
+    }
+  }
+
+  .menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #0a3c23;
+    cursor: pointer;
+  }
+
+  @media (max-width: 992px) {
+    .navMenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      display: none;
+
+      &.open {
+        display: flex;
+      }
+
+      .dropdownContent {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+      }
+    }
+
+    .menuToggle {
+      display: block;
+    }
+
+    .ctaButton {
+      display: none;
+    }
+  }
+}
