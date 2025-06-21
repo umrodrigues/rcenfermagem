@@ -1,4 +1,4 @@
-import { ISpacer } from '../../types/spacer/SpacerType';
+import { ISpacer } from '@/app/types/spacer/SpacerType';
 import styles from './SpacerStyle.module.scss';
 
 const Spacer = ({ spacing, desktopSpacing }: ISpacer) => {
