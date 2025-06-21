@@ -1,9 +1,11 @@
+@import '../../../ui/styles/mixins.scss';
+
 .mobileNav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 3rem 1.5rem;
   background-color: white;
   z-index: 1002;
 
@@ -15,12 +17,23 @@
     cursor: pointer;
     z-index: 1003;
   }
+ 
 
   .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1003;
+
+    img{
+        object-fit: contain;
+        width: 200px;
+    
+        @include media('m') {
+         width: 250px;
+         object-fit: cover;
+  }
+    }
   }
 
   .placeholder {

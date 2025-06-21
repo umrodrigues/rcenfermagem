@@ -13,7 +13,7 @@ export default function HeaderMobile() {
     <>
       <div className={styles.mobileNav}>
         <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          {menuOpen ? <FaTimes  size={24}/> : <FaBars size={24}/>}
         </button>
         <div className={styles.logo}>
           <Image src="/logo.png" alt="Logo RC Enfermagem" width={150} height={50} />
