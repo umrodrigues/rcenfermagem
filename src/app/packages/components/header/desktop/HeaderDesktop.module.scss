@@ -1,0 +1,24 @@
+.desktopNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .ctaButton {
+    background-color: #0a3c23;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #066632;
+    }
+  }
+}
