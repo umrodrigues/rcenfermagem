@@ -4,23 +4,23 @@ import Image from 'next/image';
 const values = [
   {
     icon: '/icons/heart.png',
-    title: 'Love & Care',
-    description: 'To care is to be present, ready to help. To care is to love.',
+    title: 'Amor e Cuidado',
+    description: 'Cuidar é estar presente, pronto a ajudar. Cuidar é amar.',
   },
   {
     icon: '/icons/stethoscope.png',
-    title: 'Respect',
-    description: 'Respect for life is the foundation of any other right.',
+    title: 'Respeito',
+    description: 'O respeito à vida é fundamento de qualquer outro direito.',
   },
   {
     icon: '/icons/bandage.png',
-    title: 'Knowledge',
-    description: 'Knowledge that helps and serves to support others.',
+    title: 'Conhecimento',
+    description: 'O conhecimento que serve para lhe ajudar.',
   },
   {
     icon: '/icons/cross.png',
-    title: 'Gratitude',
-    description: 'Recognizing life as a gift, taking care of it and respecting it.',
+    title: 'Gratidão',
+    description: 'Reconhecer que a vida é um presente, cuidá-la e respeitá-la.',
   },
 ];
 

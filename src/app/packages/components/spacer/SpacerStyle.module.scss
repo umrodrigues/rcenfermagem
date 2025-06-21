@@ -1,0 +1,87 @@
+@import '../../ui/styles/mixins.scss';
+
+.containerSpacer {
+  width: 100%;
+
+  &.spacing-none {
+    height: 0rem;
+  }
+
+  &.spacing-xs {
+    height: 0.25rem;
+  }
+
+  &.spacing-s {
+    height: 0.5rem;
+  }
+
+  &.spacing-m {
+    height: 1rem;
+  }
+
+  &.spacing-l {
+    height: 1.5rem;
+  }
+
+  &.spacing-xl {
+    height: 2rem;
+  }
+
+  &.spacing-2xl {
+    height: 3rem;
+  }
+
+  &.spacing-3xl {
+    height: 4rem;
+  }
+
+  &.spacing-4xl {
+    height: 6.5rem;
+  }
+
+  &.spacing-5xl {
+    height: 7.5rem;
+  }
+
+  @include media('l') {
+    &.desktop-spacing-none {
+      height: 0rem;
+    }
+
+    &.desktop-spacing-xs {
+      height: 0.25rem;
+    }
+
+    &.desktop-spacing-s {
+      height: 0.5rem;
+    }
+
+    &.desktop-spacing-m {
+      height: 1rem;
+    }
+
+    &.desktop-spacing-l {
+      height: 1.5rem;
+    }
+
+    &.desktop-spacing-xl {
+      height: 2rem;
+    }
+
+    &.desktop-spacing-2xl {
+      height: 3rem;
+    }
+
+    &.desktop-spacing-3xl {
+      height: 4rem;
+    }
+
+    &.desktop-spacing-4xl {
+      height: 6.5rem;
+    }
+
+    &.desktop-spacing-5xl {
+      height: 7.5rem;
+    }
+  }
+}

@@ -1,15 +1,14 @@
-import Header from "./components/header/header";
-import CoreValues from "./components/values/coreValues";
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import HeroBanner from "./components/banner/heroBanner";
+import { ViewportProvider } from './packages/ui/viewport/viewport';
+import { HomeContent } from './packages/components/home/home-content';
+
 
 export default function Home() {
   return (
-    <>
-    <Header />
-    <HeroBanner/>
-    <CoreValues />
-    </>
+    <ViewportProvider>
+        <HomeContent />
+    </ViewportProvider>
   );
 }
