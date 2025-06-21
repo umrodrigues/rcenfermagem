@@ -1,0 +1,116 @@
+@import '../../../../ui/styles//mixins.scss';
+
+.wrapper {
+  width: 100%;
+
+}
+
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 16px;
+  border: none;
+  height: 66px;
+
+  &.menu {
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    text-align: left;
+    color: #191919;
+    line-height: 1;
+  }
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #191919;
+}
+
+.list {
+  margin-top: 0;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.expanded {
+  max-height: 100%;
+  display: flex;
+  padding-left: 16px;
+
+  &.menu {
+    padding-left: 0px;
+  }
+}
+
+.itensList {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-decoration: underline;
+  color: #333;
+
+  &.menu {
+    width: 100%;
+  }
+}
+
+
+
+
+@include media('m') {
+  .footer {
+    .header {
+      display: block;
+      cursor: auto;
+      margin-bottom: 2rem;
+      height: auto;
+    }
+  
+    .iconWrapper {
+      display: none;
+    }
+  
+    .content {
+      max-height: none;
+      overflow: visible;
+    }
+  
+    .list {
+      margin-top: 0;
+      list-style: none;
+    }
+  }
+
+ 
+}
+
+@include media('l') {
+  .wrapper {
+    padding-right: 1.5rem;
+  }
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+

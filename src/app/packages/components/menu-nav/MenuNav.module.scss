@@ -1,0 +1,59 @@
+.navMenu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  a,
+  span {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+
+    &:hover .dropdownContent {
+      display: flex;
+    }
+
+    .dropdownContent {
+      display: none;
+      position: absolute;
+      top: 120%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 1rem;
+      flex-direction: column;
+      white-space: nowrap;
+
+      a {
+        padding: 0.3rem 0;
+      }
+    }
+  }
+
+  &.open {
+    display: flex;
+  }
+
+  @media (max-width: 992px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    display: none;
+
+    .dropdownContent {
+      position: static;
+      box-shadow: none;
+      padding-left: 1rem;
+    }
+  }
+}

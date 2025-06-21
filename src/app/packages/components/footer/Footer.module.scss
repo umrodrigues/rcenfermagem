@@ -1,0 +1,82 @@
+@import '../../ui/styles/mixins.scss';
+
+.footer {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.links {
+    display: none;
+    @include media('m') {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .linkGroup {
+        margin: 0 20px;
+
+        h4 {
+        font-size: 16px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+        }
+
+        ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 12px;
+
+            a {
+            color: #333;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #007bff;
+            }
+            }
+        }
+        }
+    }
+    }
+
+.developer {
+    font-size: 14px;
+    padding: 30px;
+    color: white;
+    background-color: rgb(51, 50, 63);
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+
+    a{
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    div{
+        display: flex;
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+    }
+
+    .accordion{
+        display: block;
+        @include media('m') {
+            display: none;
+        }
+    }
+
+    .horizontalSeparator{
+        display: none;
+        @include media('m') {
+            display: block;
+        }
+    }
