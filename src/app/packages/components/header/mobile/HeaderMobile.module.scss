@@ -1,12 +1,11 @@
 .mobileNav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-
-  .logo {
-    flex-shrink: 0;
-  }
+  background-color: white;
+  z-index: 1002;
 
   .menuToggle {
     background: none;
@@ -14,5 +13,17 @@
     font-size: 1.8rem;
     color: #0a3c23;
     cursor: pointer;
+    z-index: 1003;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+  }
+
+  .placeholder {
+    width: 1.8rem;
   }
 }

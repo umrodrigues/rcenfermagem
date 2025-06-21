@@ -1,0 +1,56 @@
+.navMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: none;
+  z-index: 1001;
+  overflow-y: auto;
+
+  &.open {
+    display: flex;
+    animation: slideIn 0.3s ease forwards;
+  }
+
+  .menuContent {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    a,
+    span {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .dropdownContent {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .dropdown span {
+      font-weight: 600;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

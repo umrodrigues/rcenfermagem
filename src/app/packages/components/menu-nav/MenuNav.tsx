@@ -1,32 +1,16 @@
 'use client';
 
-import Link from 'next/link';
-import styles from './MenuNav.module.scss';
-import { menuMock } from './__mocks__/menu-nav.mock';
+import { useBreakpoint } from "../../ui/viewport/viewport";
+import MenuNavDesktop from "./desktop/menu-nav-desktop";
+import MenuNavMobile from "./mobile/menu-nav-mobile";
 
+type Props = {
+  isOpen: boolean;
+};
 
+export default function MenuNav({ isOpen }: Props) {
+  const { isMobile, isTablet } = useBreakpoint();
+  const isMobileOrTablet = isMobile || isTablet;
 
-export default function MenuNav({ isOpen }: { isOpen: boolean }) {
-  return (
-    <nav className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
-      {menuMock.map((item, index) =>
-        item.subItems ? (
-          <div className={styles.dropdown} key={index}>
-            <span>{item.label} ▾</span>
-            <div className={styles.dropdownContent}>
-              {item.subItems.map((sub, subIndex) => (
-                <Link href={sub.href} key={subIndex}>
-                  {sub.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <Link href={item.href!} key={index}>
-            {item.label}
-          </Link>
-        )
-      )}
-    </nav>
-  );
+  return isMobileOrTablet ? <MenuNavMobile isOpen={isOpen} /> : <MenuNavDesktop />;
 }
