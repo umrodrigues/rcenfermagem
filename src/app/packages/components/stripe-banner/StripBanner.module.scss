@@ -1,0 +1,36 @@
+@import '../../ui/styles/mixins.scss';
+
+.topBar {
+  background: linear-gradient(to right, #011c0d 0%, #016a30 50%, #01853a 100%);
+  color: white;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.4rem 1rem;
+  flex-wrap: wrap;
+  transition: background 0.3s ease-in-out;
+  display: none;
+
+    @include media('m') {
+      display: block;
+    }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1rem;
+  }
+}

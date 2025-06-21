@@ -3,34 +3,7 @@
   width: 100%;
 }
 
-.topBar {
-  background-color: #0a3c23;
-  color: white;
-  font-size: 0.85rem;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0.4rem 1rem;
-  flex-wrap: wrap;
 
-  .contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-    span {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-  }
-
-  .social {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    font-size: 1rem;
-  }
-}
 
 .mainNav {
   display: flex;
