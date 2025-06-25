@@ -6,19 +6,25 @@
 
   .logo {
     flex-shrink: 0;
+
+    img {
+      object-fit: contain;
+      width: 280px;
+    }
   }
 
   .ctaButton {
-    background-color: #0a3c23;
     color: white;
-    padding: 0.6rem 1rem;
+    padding: 14px 40px 14px 40px;
+    background-image: linear-gradient(250deg, #008a3d 19%, #010603 100%);
     border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
     transition: background 0.3s;
 
     &:hover {
-      background-color: #066632;
+          background-image: linear-gradient(250deg, #010603 19%, #008a3d 100%);
+
     }
   }
 }

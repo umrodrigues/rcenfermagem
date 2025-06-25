@@ -6,13 +6,15 @@ import MenuNavMobile from "./mobile/menu-nav-mobile";
 
 type Props = {
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 export default function MenuNav({ isOpen, onClose }: Props) {
   const { isMobile, isTablet } = useBreakpoint();
   const isMobileOrTablet = isMobile || isTablet;
 
-  return isMobileOrTablet ? <MenuNavMobile isOpen={isOpen} onClose={onClose} /> : <MenuNavDesktop />;
+  const handleOnClose = onClose ?? (() => {});
+
+  return isMobileOrTablet ? <MenuNavMobile isOpen={isOpen} onClose={handleOnClose} /> : <MenuNavDesktop />;
 
 }
