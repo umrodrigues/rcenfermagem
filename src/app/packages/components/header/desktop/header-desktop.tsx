@@ -7,14 +7,14 @@ import MenuNav from '../../menu-nav/MenuNav';
 
 export default function HeaderDesktop() {
   return (
-    <div className={styles.desktopNav}>
+    <header className={styles.desktopNav}>
       <div className={styles.logo}>
         <Image src="/logo.png" alt="Logo RC Enfermagem" width={180} height={60} />
       </div>
-      <MenuNav isOpen/>
+      <MenuNav isOpen />
       <Link href="#" className={styles.ctaButton}>
         Atendimento Domiciliar
       </Link>
-    </div>
+    </header>
   );
 }

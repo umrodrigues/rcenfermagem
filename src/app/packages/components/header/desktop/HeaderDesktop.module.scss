@@ -2,29 +2,29 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 1.5rem 3rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
 
-  .logo {
-    flex-shrink: 0;
-
-    img {
-      object-fit: contain;
-      width: 280px;
-    }
+  .logo img {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
   }
 
   .ctaButton {
-    color: white;
-    padding: 14px 40px 14px 40px;
-    background-image: linear-gradient(250deg, #008a3d 19%, #010603 100%);
+    color: #ffffff;
+    padding: 12px 28px;
+    background-image: linear-gradient(250deg, #008a3d 0%, #00b377 100%);
     border-radius: 6px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 
     &:hover {
-          background-image: linear-gradient(250deg, #010603 19%, #008a3d 100%);
-
+      background-image: linear-gradient(250deg, #00b377 0%, #008a3d 100%);
+      transform: translateY(-2px);
     }
   }
 }
