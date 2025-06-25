@@ -7,9 +7,10 @@ import { useState } from 'react';
 
 type Props = {
   isOpen: boolean;
+  onClose: () => void;
 };
 
-export default function MenuNavMobile({ isOpen }: Props) {
+export default function MenuNavMobile({ isOpen, onClose }: Props) {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
   const toggleDropdown = (index: number) => {
@@ -19,7 +20,7 @@ export default function MenuNavMobile({ isOpen }: Props) {
   };
 
   return (
-    <nav className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
+    <div className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
       <div className={styles.menuContent}>
         {menuMock.map((item, index) =>
           item.subItems ? (
@@ -38,7 +39,7 @@ export default function MenuNavMobile({ isOpen }: Props) {
                 className={`${styles.dropdownContent} ${openIndexes.includes(index) ? styles.show : ''}`}
               >
                 {item.subItems.map((sub, subIndex) => (
-                  <Link href={sub.href} key={subIndex} onClick={() => setOpenIndexes([])}>
+                  <Link href={sub.href} key={subIndex} onClick={onClose}>
                     {sub.label}
                   </Link>
                 ))}
@@ -47,7 +48,7 @@ export default function MenuNavMobile({ isOpen }: Props) {
             </div>
           ) : (
             <div key={index}>
-              <Link href={item.href!} onClick={() => setOpenIndexes([])} className={styles.simpleLink}>
+              <Link href={item.href!} onClick={onClose} className={styles.simpleLink}>
                 {item.label}
               </Link>
               <div className={styles.separator} />
@@ -55,6 +56,6 @@ export default function MenuNavMobile({ isOpen }: Props) {
           )
         )}
       </div>
-    </nav>
+    </div>
   );
 }

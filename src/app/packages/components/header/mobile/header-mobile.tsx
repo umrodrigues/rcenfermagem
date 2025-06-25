@@ -12,15 +12,14 @@ export default function HeaderMobile() {
   return (
     <>
       <div className={styles.mobileNav}>
-        <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FaTimes  size={24}/> : <FaBars size={24}/>}
-        </button>
         <div className={styles.logo}>
           <Image src="/logo.png" alt="Logo RC Enfermagem" width={150} height={50} />
         </div>
-        <div className={styles.placeholder}></div>
+        <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </div>
-      <MenuNav isOpen={menuOpen} />
+      <MenuNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }

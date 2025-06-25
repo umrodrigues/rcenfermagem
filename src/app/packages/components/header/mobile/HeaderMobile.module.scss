@@ -1,23 +1,18 @@
 @import '../../../ui/styles/mixins.scss';
 
 .mobileNav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 3rem 1.5rem;
-  background-color: white;
-  z-index: 1002;
-
-  .menuToggle {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: #0a3c23;
-    cursor: pointer;
-    z-index: 1003;
-  }
- 
+  justify-content: center;
+  z-index: 1003;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid #eee;
 
   .logo {
     position: absolute;
@@ -25,18 +20,24 @@
     transform: translateX(-50%);
     z-index: 1003;
 
-    img{
-        object-fit: contain;
-        width: 200px;
-    
-        @include media('m') {
-         width: 250px;
-         object-fit: cover;
-  }
+    img {
+      object-fit: contain;
+      width: 180px;
+
+      @include media('m') {
+        width: 220px;
+      }
     }
   }
 
-  .placeholder {
-    width: 1.8rem;
+  .menuToggle {
+    position: absolute;
+    left: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #0a3c23;
+    cursor: pointer;
+    z-index: 1004;
   }
 }
