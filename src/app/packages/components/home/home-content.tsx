@@ -2,6 +2,7 @@ import { Spacer } from "../spacer/spacer";
 import { DefaultLayout } from '../default/default-layout';
 import CoreValues from "../values/coreValues";
 import ConsultorioSection from "../consultorio/consultorio-section";
+import EspacoSection from "../espaco/espaco-section";
 
 
 
@@ -15,8 +16,7 @@ export const HomeContent = () => {
       <ConsultorioSection />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
 
-      <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
-      <CoreValues />
+      <EspacoSection />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <CoreValues />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
