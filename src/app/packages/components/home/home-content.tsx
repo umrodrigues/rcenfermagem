@@ -4,6 +4,7 @@ import CoreValues from "../values/coreValues";
 import ConsultorioSection from "../consultorio/consultorio-section";
 import EspacoSection from "../espaco/espaco-section";
 import OurSolutions from "../our-solutions/our-solutions";
+import Reviews from "../reviews/reviews";
 
 
 
@@ -22,7 +23,7 @@ export const HomeContent = () => {
       <OurSolutions />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
-      <CoreValues />
+      <Reviews />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <CoreValues />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
