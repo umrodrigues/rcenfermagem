@@ -3,6 +3,7 @@ import { DefaultLayout } from '../default/default-layout';
 import CoreValues from "../values/coreValues";
 import ConsultorioSection from "../consultorio/consultorio-section";
 import EspacoSection from "../espaco/espaco-section";
+import OurSolutions from "../our-solutions/our-solutions";
 
 
 
@@ -18,7 +19,7 @@ export const HomeContent = () => {
 
       <EspacoSection />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
-      <CoreValues />
+      <OurSolutions />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <CoreValues />
