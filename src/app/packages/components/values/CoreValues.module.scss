@@ -8,7 +8,7 @@
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1200px;
   width: 100%;
 }

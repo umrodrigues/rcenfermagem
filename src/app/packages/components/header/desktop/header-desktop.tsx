@@ -12,7 +12,7 @@ export default function HeaderDesktop() {
         <Image src="/logo.png" alt="Logo RC Enfermagem" width={180} height={60} />
       </div>
       <MenuNav isOpen />
-      <Link href="#" className={styles.ctaButton}>
+      <Link href="https://api.whatsapp.com/send?phone=5551997822982" target='_blank' className={styles.ctaButton}>
         Atendimento Domiciliar
       </Link>
     </header>
