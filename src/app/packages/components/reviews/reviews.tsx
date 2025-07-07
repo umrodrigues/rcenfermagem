@@ -28,6 +28,7 @@ const reviews = [
 export default function Reviews() {
   return (
     <section className={styles.reviewsSection}>
+      <h2 className={styles.title}>Depoimentos</h2>
       <Swiper
         modules={[Autoplay, Pagination]}
         slidesPerView={2}
