@@ -15,7 +15,7 @@ export default function Home() {
             items={[
                 { name: 'Home', url: '/' },
                 { name: 'Equipe', url: '/equipe' },
-                { name: 'Detalhes', url: '' }, // página atual, url pode ser vazio ou omitido
+                { name: 'Detalhes', url: '' },
             ]}
             />
         </DefaultLayout>
