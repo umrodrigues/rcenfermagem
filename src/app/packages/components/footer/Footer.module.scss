@@ -1,0 +1,122 @@
+.footer {
+  position: relative;
+  background: url('/footer.png') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  padding: 3rem 2rem;
+  font-size: 0.95rem;
+  z-index: 0;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.logoSection {
+  flex: 1;
+  min-width: 250px;
+}
+
+.logoSection img {
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.logoSection p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.logoSection .social {
+  display: flex;
+  gap: 1rem;
+}
+
+.logoSection .social a {
+  background: #ffffff;
+  color: #004b12;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.logoSection .social a:hover {
+  background: #007a35;
+  color: #ffffff;
+}
+
+.linksSection {
+  flex: 1;
+  min-width: 200px;
+}
+
+.linksSection h4 {
+  color: #b5ffcb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.linksSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.linksSection ul li {
+  margin-bottom: 0.75rem;
+}
+
+.linksSection ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.linksSection ul li a:hover {
+  color: #b5ffcb;
+}
+
+.contactSection {
+  flex: 1.2;
+  min-width: 280px;
+}
+
+.contactSection h4 {
+  color: #b5ffcb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contactSection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contactSection ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.contactSection ul li svg {
+  color: #b5ffcb;
+  min-width: 16px;
+}
