@@ -1,3 +1,5 @@
+import Copyright from "../copyright/copyright";
+import Footer from "../footer/footer";
 import { GoToWhatsapp } from "../go-to-whatsapp/go-to-whatsapp";
 import Header from "../header/header";
 
@@ -9,6 +11,8 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <>
      <Header />
       {children}
+     <Footer />
+      <Copyright />
       <GoToWhatsapp />
     </>
   );

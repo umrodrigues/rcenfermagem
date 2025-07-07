@@ -6,9 +6,6 @@ import OurSolutions from "../our-solutions/our-solutions";
 import Reviews from "../reviews/reviews";
 import BlogSection from "../blog/blog-section";
 import PartnerLogos from "../partners/partners-logo";
-import Footer from "../footer/footer";
-
-
 
 export const HomeContent = () => {
   return (
@@ -27,7 +24,6 @@ export const HomeContent = () => {
       <BlogSection/>
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <PartnerLogos/>
-      <Footer />
     </DefaultLayout>
   );
 };
