@@ -7,10 +7,6 @@ export const menuMock = [
     ],
   },
   {
-    label: 'Equipe',
-    href: '#',
-  },
-  {
     label: 'Serviços',
     href: '/servicos',
     subItems: [
@@ -26,14 +22,10 @@ export const menuMock = [
   },
   {
     label: 'Depoimentos',
-    href: '#',
-  },
-  {
-    label: 'Blog',
-    href: '#',
+    href: '/depoimentos',
   },
   {
     label: 'Contato',
-    href: '#',
+    href: '/contato',
   },
 ];
