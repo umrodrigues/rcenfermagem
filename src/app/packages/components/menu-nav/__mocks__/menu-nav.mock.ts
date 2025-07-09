@@ -12,6 +12,7 @@ export const menuMock = [
   },
   {
     label: 'Serviços',
+    href: '/servicos',
     subItems: [
       { label: 'Capacitação e Cursos', href: '#' },
       { label: 'Auditoria de conta particular', href: '#' },

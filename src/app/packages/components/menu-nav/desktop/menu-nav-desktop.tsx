@@ -10,9 +10,17 @@ export default function MenuNavDesktop() {
       {menuMock.map((item, index) =>
         item.subItems ? (
           <div className={styles.dropdown} key={index}>
-            <span className={styles.menuItem}>
-              {item.label} <span className={styles.arrow}>▾</span>
-            </span>
+            <div className={styles.menuItem}>
+              {item.href ? (
+                <Link href={item.href} className={styles.menuLabel}>
+                  {item.label} <span className={styles.arrow}>▾</span>
+                </Link>
+              ) : (
+                <span className={styles.menuLabel}>
+                  {item.label} <span className={styles.arrow}>▾</span>
+                </span>
+              )}
+            </div>
             <div className={styles.dropdownContent}>
               {item.subItems.map((sub, subIndex) => (
                 <Link href={sub.href} key={subIndex} className={styles.dropdownLink}>

@@ -4,39 +4,9 @@ import styles from './OurSolutions.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
+import { servicesMock } from '../rc-services/__mocks__/service.mock';
 
-const solucoes = [
-  {
-    id: 1,
-    titulo: 'Consulta de Enfermagem',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/consulta-enfermagem',
-  },
-  {
-    id: 2,
-    titulo: 'Curativos Avançados',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/curativos',
-  },
-  {
-    id: 3,
-    titulo: 'Acompanhamento Domiciliar',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/acompanhamento',
-  },
-  {
-    id: 4,
-    titulo: 'Terapia Assistida',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/terapia',
-  },
-  {
-    id: 5,
-    titulo: 'Atendimento 24h',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/atendimento',
-  },
-];
+
 
 export default function OurSolutions() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -59,7 +29,7 @@ export default function OurSolutions() {
         <button className={styles.arrowLeft} onClick={() => scroll('left')}>‹</button>
 
         <div ref={carouselRef} className={styles.carousel}>
-          {solucoes.map((item) => (
+          {servicesMock.map((item) => (
             <div key={item.id} className={styles.card}>
               <div className={styles.imageWrapper}>
                 <Image
