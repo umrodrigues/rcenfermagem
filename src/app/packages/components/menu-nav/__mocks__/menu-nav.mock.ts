@@ -1,5 +1,9 @@
 export const menuMock = [
   {
+    label: 'Início',
+    href: '/',
+  },
+  {
     label: 'Empresa',
     subItems: [
       { label: 'Quem Somos', href: '#' },

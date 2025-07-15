@@ -1,20 +1,59 @@
 .logoSection {
-  background-color: #005000;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
-.logoContainer {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-  img {
-    max-height: 60px;
-    width: auto;
-    object-fit: contain;
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  gap: 3rem;
+}
+
+.logo {
+  position: relative;
+  width: 140px;
+  aspect-ratio: 3 / 2;
+  flex-shrink: 0;
+  background: linear-gradient(250deg, #008a3d 0%, #00b377 100%);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.logo img {
+  object-fit: contain;
+  filter: brightness(1) contrast(1.1);
+  border-radius: 4px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 90px;
+    padding: 0.3rem;
+  }
+
+  .track {
+    gap: 2rem;
+    animation-duration: 20s;
   }
 }
