@@ -1,6 +1,6 @@
 .reviewsSection {
   background: linear-gradient(135deg, #007a35, #0c2e10);
-  padding: 6rem 2rem;
+  padding: 4rem 1.5rem 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,68 +8,169 @@
 
 .title {
   font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
 }
 
-.swiper {
+.keen-slider {
   width: 100%;
   max-width: 1200px;
-  padding: 2rem 1rem;
-  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.swiper-slide {
+.keen-slider__slide {
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding: 0;
+  flex: 1 0 auto;
+  box-sizing: border-box;
 }
 
 .card {
   background: linear-gradient(180deg, #e9ffe8, #ffffff);
   border-radius: 1.5rem;
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem 2.5rem;
   text-align: center;
   min-height: 320px;
-  max-width: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  margin: 0 1rem;
   position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  transition: min-height 0.3s ease;
+}
+
+.card.expanded {
+  min-height: 440px;
+  overflow: auto;
 }
 
 .quote {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #008a3d;
   position: absolute;
   top: 1rem;
   left: 1.5rem;
+  user-select: none;
 }
 
 .text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #12121e;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
   padding: 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card.expanded .text {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: auto;
 }
 
 .name {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #008a3d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dots {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #fff;
+}
+
+.active {
+  background: #ffffff;
+  transform: scale(1.5);
+  box-shadow: 0 0 8px #fff;
 }
 
 @media (max-width: 768px) {
-  .card {
-    margin: 0 auto;
+  .title {
+    font-size: 1.85rem;
+    margin-bottom: 1.75rem;
   }
 
-  .title {
-    font-size: 1.75rem;
+  .card {
+    padding: 1.75rem 1rem 2rem;
+    min-height: 280px;
+    max-width: 90vw;
+  }
+
+  .card.expanded {
+    min-height: 400px;
+  }
+
+  .text {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+
+  .card.expanded .text {
+    -webkit-line-clamp: unset;
+  }
+
+  .quote {
+    font-size: 1.6rem;
+    top: 0.5rem;
+    left: 1rem;
+  }
+
+  .dots {
+    gap: 10px;
+    margin-top: 1.3rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .active {
+    transform: scale(1.4);
   }
 }
