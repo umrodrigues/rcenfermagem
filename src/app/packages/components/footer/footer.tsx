@@ -21,7 +21,7 @@ export default function Footer() {
           <h4>Institucional</h4>
           <ul>
             <li><a href="#">Quem Somos</a></li>
-            <li><a href="#">Serviços</a></li>
+            <li><a href="/servicos">Serviços</a></li>
             <li><a href="#">Política de Privacidade</a></li>
             <li><a href="#">Termos de Uso</a></li>
           </ul>
