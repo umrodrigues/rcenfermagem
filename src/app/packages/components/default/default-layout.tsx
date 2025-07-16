@@ -1,3 +1,4 @@
+import Cookies from "../cookies/cookies";
 import Copyright from "../copyright/copyright";
 import Footer from "../footer/footer";
 import { GoToWhatsapp } from "../go-to-whatsapp/go-to-whatsapp";
@@ -14,6 +15,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
      <Footer />
       <Copyright />
       <GoToWhatsapp />
+      <Cookies />
     </>
   );
 };
