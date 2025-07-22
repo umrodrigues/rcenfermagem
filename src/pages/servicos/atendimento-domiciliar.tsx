@@ -5,6 +5,8 @@ import "../../app/packages/ui/styles/globals.scss";
 import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
+import ServiceSection from '@/app/packages/components/service-section/service-section';
+import { mockTitle, mockText } from './consulta-de-enfermagem';
 
 
 export default function AtendimentoDomiciliar() {
@@ -18,6 +20,12 @@ export default function AtendimentoDomiciliar() {
                 { name: 'Atendimento Domiciliar', url: '' },
             ]}
             />
+
+             <ServiceSection
+                          title={mockTitle}
+                          text={mockText}
+                          imageSrc="/imgblog1.jpeg" 
+                        />
         </DefaultLayout>
     </ViewportProvider>
   );
