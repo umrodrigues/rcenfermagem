@@ -50,6 +50,7 @@
       pointer-events: none;
       transform: translateY(10px);
       transition: all 0.3s ease;
+      z-index: 1000;
 
       .dropdownLink {
         color: #008a3d;

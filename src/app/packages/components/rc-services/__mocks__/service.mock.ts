@@ -13,20 +13,15 @@ export const servicesMock = [
   },
   {
     id: 3,
-    titulo: 'Acompanhamento Domiciliar',
+    titulo: 'Atendimento Domiciliar',
     imagem: '/teste1.jpeg',
-    link: '/solucoes/acompanhamento',
+    link: '/servicos/atendimento-domiciliar',
   },
   {
     id: 4,
-    titulo: 'Terapia Assistida',
+    titulo: 'Administração de medicamentos',
     imagem: '/teste1.jpeg',
-    link: '/solucoes/terapia',
-  },
-  {
-    id: 5,
-    titulo: 'Atendimento 24h',
-    imagem: '/teste1.jpeg',
-    link: '/solucoes/atendimento',
-  },
+    link: '/servicos/adminstracao-de-medicamentos',
+  }
+
 ];

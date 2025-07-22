@@ -14,14 +14,11 @@ export const menuMock = [
     label: 'Serviços',
     href: '/servicos',
     subItems: [
-      { label: 'Capacitação e Cursos', href: '#' },
-      { label: 'Auditoria de conta particular', href: '#' },
-      { label: 'Curso para casais grávidos', href: '#' },
-      { label: 'Ozonioterapia', href: '#' },
-      { label: 'Atendimento Domiciliar', href: '#' },
-      { label: 'Laserterapia', href: '#' },
-      { label: 'Consultoria no gerenciamento dos processos de enfermagem', href: '#' },
-      { label: 'Consultoria em Amamentação', href: '#' },
+      { label: 'Consulta de enfermagem', href: '/servicos/consulta-de-enfermagem' },
+      { label: 'Procedimentos de enfermagem', href: 'procedimentos-de-enfermagem' },
+      { label: 'Atendimento Domiciliar', href: '/servicos/atendimento-domiciliar' },
+      { label: 'Administração de medicamentos', href: '/servicos/adminstracao-de-medicamentos' },
+
     ],
   },
   {

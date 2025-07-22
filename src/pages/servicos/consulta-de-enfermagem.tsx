@@ -7,7 +7,7 @@ import { DefaultLayout } from '@/app/packages/components/default/default-layout'
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 
 
-export default function Equipe() {
+export default function ConsultoriaDeEnfermagem() {
   return (
     <ViewportProvider>
         <DefaultLayout>

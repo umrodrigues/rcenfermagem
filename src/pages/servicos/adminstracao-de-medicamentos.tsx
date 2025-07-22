@@ -5,10 +5,9 @@ import "../../app/packages/ui/styles/globals.scss";
 import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
-import OurSolutions from '@/app/packages/components/our-solutions/our-solutions';
 
 
-export default function Laserterapia() {
+export default function ConsultoriaDeEnfermagem() {
   return (
     <ViewportProvider>
         <DefaultLayout>
@@ -19,8 +18,6 @@ export default function Laserterapia() {
                 { name: 'Detalhes', url: '' },
             ]}
             />
-
-            <OurSolutions />
         </DefaultLayout>
     </ViewportProvider>
   );
