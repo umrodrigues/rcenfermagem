@@ -3,13 +3,13 @@ export const servicesMock = [
     id: 1,
     titulo: 'Consulta de Enfermagem',
     imagem: '/teste1.jpeg',
-    link: '/servicos/laserterapia',
+    link: '/servicos/consulta-de-enfermagem',
   },
   {
     id: 2,
-    titulo: 'Curativos Avançados',
+    titulo: 'Procedimentos de enfermagem',
     imagem: '/teste1.jpeg',
-    link: '/solucoes/curativos',
+    link: '/servicos/procedimentos-de-enfermagem',
   },
   {
     id: 3,

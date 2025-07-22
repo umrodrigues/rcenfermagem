@@ -15,7 +15,7 @@ export const menuMock = [
     href: '/servicos',
     subItems: [
       { label: 'Consulta de enfermagem', href: '/servicos/consulta-de-enfermagem' },
-      { label: 'Procedimentos de enfermagem', href: 'procedimentos-de-enfermagem' },
+      { label: 'Procedimentos de enfermagem', href: 'servicos/procedimentos-de-enfermagem' },
       { label: 'Atendimento Domiciliar', href: '/servicos/atendimento-domiciliar' },
       { label: 'Administração de medicamentos', href: '/servicos/adminstracao-de-medicamentos' },
 

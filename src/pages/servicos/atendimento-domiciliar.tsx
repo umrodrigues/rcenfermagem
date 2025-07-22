@@ -7,15 +7,15 @@ import { DefaultLayout } from '@/app/packages/components/default/default-layout'
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 
 
-export default function Equipe() {
+export default function AtendimentoDomiciliar() {
   return (
     <ViewportProvider>
         <DefaultLayout>
             <Breadcrumb
             items={[
-                { name: 'Home', url: '/' },
-                { name: 'Equipe', url: '/equipe' },
-                { name: 'Detalhes', url: '' },
+                { name: 'Inicio', url: '/' },
+                { name: 'Serviços', url: '/servicos' },
+                { name: 'Atendimento Domiciliar', url: '' },
             ]}
             />
         </DefaultLayout>

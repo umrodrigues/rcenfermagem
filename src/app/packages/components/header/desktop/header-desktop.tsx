@@ -9,7 +9,9 @@ export default function HeaderDesktop() {
   return (
     <header className={styles.desktopNav}>
       <div className={styles.logo}>
-        <Image src="/logo.png" alt="Logo RC Enfermagem" width={180} height={60} />
+        <Link href="/">
+          <Image src="/logo.png" alt="Logo RC Enfermagem" width={180} height={60} />
+        </Link>
       </div>
       <MenuNav isOpen />
       <Link href="https://api.whatsapp.com/send?phone=5551997822982" target='_blank' className={styles.ctaButton}>
