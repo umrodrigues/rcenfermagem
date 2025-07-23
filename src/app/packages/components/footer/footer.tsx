@@ -20,10 +20,10 @@ export default function Footer() {
         <div className={styles.linksSection}>
           <h4>Institucional</h4>
           <ul>
-            <li><a href="#">Quem Somos</a></li>
+            <li><a href="/quem-somos">Quem Somos</a></li>
             <li><a href="/servicos">Serviços</a></li>
-            <li><a href="#">Política de Privacidade</a></li>
-            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+            <li><a href="/termos-de-uso">Termos de Uso</a></li>
           </ul>
         </div>
 

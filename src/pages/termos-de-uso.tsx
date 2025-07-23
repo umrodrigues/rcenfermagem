@@ -5,10 +5,10 @@ import "../app/packages/ui/styles/globals.scss";
 import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
-import PrivacyPolicy from '@/app/packages/components/privacy-policy/privacy-policy';
+import TermsOfUse from '@/app/packages/components/using-terms/terms-of-use';
 
 
-export default function PoliticaDePrivacidade() {
+export default function TermosDeUso() {
   return (
     <ViewportProvider>
         <DefaultLayout>
@@ -19,7 +19,7 @@ export default function PoliticaDePrivacidade() {
             ]}
             />
 
-            <PrivacyPolicy />
+            <TermsOfUse />
            
         </DefaultLayout>
     </ViewportProvider>
