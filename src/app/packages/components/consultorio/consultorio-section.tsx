@@ -27,7 +27,7 @@ export default function ConsultorioSection() {
             Nos orgulhamos da capacidade de mudar e impactar vidas de maneira saudável. Tem
             curiosidade de saber mais? Entre em contato com nossa equipe ainda hoje.
           </p>
-          <a className={styles.button} href="#contato">SAIBA MAIS</a>
+          <a className={styles.button} href="/contato">SAIBA MAIS</a>
         </div>
       </div>
     </section>

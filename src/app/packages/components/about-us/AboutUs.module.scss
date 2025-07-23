@@ -1,0 +1,192 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  height: 320px;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.2);
+
+  .backgroundImage {
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 0.6s ease;
+  }
+
+  &:hover .backgroundImage {
+    transform: scale(1.05);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #2c3e50aa 0%, #3498dbcc 100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    border-radius: 16px;
+  }
+
+  .heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 29, 40, 0.6);
+    border-radius: 16px;
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 3rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      font-weight: 400;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+  }
+}
+
+.about {
+  margin-bottom: 3rem;
+
+  p {
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  .featuresList {
+    list-style: none;
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+
+    li {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      padding-left: 1.2rem;
+      position: relative;
+      color: #2c3e50;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #3498db;
+        font-weight: bold;
+        font-size: 1.4rem;
+        top: 2px;
+      }
+    }
+  }
+
+  .callToAction {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #1a73e8;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #155ab6;
+      text-decoration: underline;
+    }
+  }
+}
+
+.services, .specialty, .entrepreneurship, .education {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a73e8;
+    border-left: 5px solid #3498db;
+    padding-left: 0.7rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    color: #2c3e50;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-size: 1.05rem;
+    }
+  }
+
+  .callToAction {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a73e8;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+
+    &:hover {
+      color: #155ab6;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 260px;
+
+    .heroContent {
+      padding: 1.5rem 1.5rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
