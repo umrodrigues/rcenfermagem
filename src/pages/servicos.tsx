@@ -14,9 +14,8 @@ export default function Servicos() {
         <DefaultLayout>
             <Breadcrumb
             items={[
-                { name: 'Home', url: '/' },
-                { name: 'Equipe', url: '/equipe' },
-                { name: 'Detalhes', url: '' },
+                { name: 'Inicio', url: '/' },
+                { name: 'Serviços', url: '' },
             ]}
             />
 

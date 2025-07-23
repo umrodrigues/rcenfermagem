@@ -1,0 +1,85 @@
+@import '../../ui/styles/mixins.scss';
+
+.contactSection {
+  background: #f5f7f8;
+  padding: 4rem 1rem;
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #13131f;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, #014724, #016a37);
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.3rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  svg {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    color: #d9fadd;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  p, a {
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 1.4;
+    word-break: break-word;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  a {
+    overflow-wrap: break-word;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.mapWrapper {
+  iframe {
+    width: 100%;
+    height: 360px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  display: flex;
+  justify-content: center;
+}
