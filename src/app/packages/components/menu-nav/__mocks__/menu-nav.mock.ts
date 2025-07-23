@@ -4,13 +4,6 @@ export const menuMock = [
     href: '/',
   },
   {
-    label: 'Empresa',
-    subItems: [
-      { label: 'Quem Somos', href: '#' },
-      { label: 'Consultório', href: '#' },
-    ],
-  },
-  {
     label: 'Serviços',
     href: '/servicos',
     subItems: [
@@ -20,6 +13,10 @@ export const menuMock = [
       { label: 'Administração de medicamentos', href: '/servicos/adminstracao-de-medicamentos' },
 
     ],
+  },
+    {
+    label: 'Quem somos',
+    href: '/quem-somos',
   },
   {
     label: 'Depoimentos',
