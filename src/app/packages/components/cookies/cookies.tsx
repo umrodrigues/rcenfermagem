@@ -29,7 +29,7 @@ export default function Cookies() {
   return (
     <div className={styles.cookieWrapper}>
       <p className={styles.cookieText}>
-        Utilizamos cookies essenciais e tecnologias semelhantes de acordo com a nossa <a href="#">Política de Privacidade</a> e <a href="#">Termos de Uso</a> e ao continuar navegando, você concorda com estas condições.
+        Utilizamos cookies essenciais e tecnologias semelhantes de acordo com a nossa <a href="/politica-de-privacidade">Política de Privacidade</a> e <a href="termos-de-uso" >Termos de Uso</a> e ao continuar navegando, você concorda com estas condições.
       </p>
       <div className={styles.cookieOptions}>
         <p className={styles.cookieLabel}>Permito o uso de cookies para:</p>
