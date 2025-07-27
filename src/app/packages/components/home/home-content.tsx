@@ -5,10 +5,12 @@ import ConsultorioSection from "../consultorio/consultorio-section";
 import OurSolutions from "../our-solutions/our-solutions";
 import Reviews from "../reviews/reviews";
 import PartnerLogos from "../partners/partners-logo";
+import HeroBanner from "../banner/heroBanner";
 
 export const HomeContent = () => {
   return (
     <DefaultLayout>
+      <HeroBanner />
       <CoreValues />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <ConsultorioSection />
