@@ -6,23 +6,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './HeroBanner.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
+import { bannerDataMock } from './__mocks__/banners.mock';
 
-const bannerData = [
-  {
-    image: '/banner/banner1.jpeg',
-    title: 'RC Enfermagem',
-    subtitle: 'Bem-vindo a',
-    description: 'Para você um espaço de acolhimento e humanização nos cuidados em saúde',
-  },
-  {
-    image: '/banner/banner2.jpeg',
-    title: 'Amor RC',
-    subtitle: 'Atendimento Humanizado',
-    description: 'Cuidamos de cada paciente como se fosse alguém da nossa família',
-  },
-];
 
 export default function HeroBanner() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -40,7 +27,7 @@ export default function HeroBanner() {
   return (
     <section className={styles.bannerWrapper}>
       <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
-        {bannerData.map((slide, index) => (
+        {bannerDataMock.map((slide, index) => (
           <div key={index} className={`keen-slider__slide ${styles.banner}`}>
             <div className={styles.imageWrapper}>
               <Image

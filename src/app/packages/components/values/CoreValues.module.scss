@@ -5,6 +5,13 @@
   justify-content: center;
 }
 
+@media (max-width: 640px) {
+  .coreValuesSection {
+    padding-top: 0;
+  }
+}
+
+
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
