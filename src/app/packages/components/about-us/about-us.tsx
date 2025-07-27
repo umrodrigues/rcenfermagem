@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from './AboutUs.module.scss';
+import Link from 'next/link';
 
 export default function AboutUs() {
   return (
@@ -35,9 +36,9 @@ export default function AboutUs() {
           de atendimento que respeitam sua autonomia, sua história e suas necessidades específicas.
         </p>
         <ul className={styles.featuresList}>
-          <li>🔹 Atendimentos no consultório, sem fila e com hora marcada;</li>
-          <li>🔹 Atendimento domiciliar, vamos até você;</li>
-          <li>🔹 Profissionais especialistas e com experiência na enfermagem.</li>
+          <li> Atendimentos no consultório, sem fila e com hora marcada;</li>
+          <li> Atendimento domiciliar, vamos até você;</li>
+          <li> Profissionais especialistas e com experiência na enfermagem.</li>
         </ul>
         <p className={styles.callToAction}>Queremos transformar a forma como o cuidado é percebido. Vamos juntos? Entre em contato e descubra como podemos fazer a diferença na sua vida ou na sua instituição.</p>
       </section>
@@ -110,8 +111,8 @@ export default function AboutUs() {
           empreender com propósito e segurança:
         </p>
         <ul>
-          <li>🔹 Mentorias Estratégicas e individuais, com orientação prática para tirar sua ideia do papel e estruturar seu negócio.</li>
-          <li>🔹 Vivência no Consultório de Enfermagem, para aprender gestão, marketing, precificação e acompanhar atendimentos reais.</li>
+          <li> Mentorias Estratégicas e individuais, com orientação prática para tirar sua ideia do papel e estruturar seu negócio.</li>
+          <li> Vivência no Consultório de Enfermagem, para aprender gestão, marketing, precificação e acompanhar atendimentos reais.</li>
         </ul>
         <p>
           💡 Saia da teoria e venha viver a prática de um futuro promissor. Desperte seu potencial e seja referência na enfermagem do agora.
@@ -141,7 +142,11 @@ export default function AboutUs() {
         <p>
           🎓 No RC Educação, o estudo é contínuo e a evolução certa. Invista em você, na ciência e seja referência no que faz.
         </p>
-        <p className={styles.callToAction}>👉 Fale com a nossa equipe e garanta sua vaga!</p>
+        <Link href="/contato" passHref>
+        <p className={styles.callToAction} style={{ cursor: 'pointer' }}>
+          👉 Fale com a nossa equipe e garanta sua vaga!
+        </p>
+      </Link>
       </section>
     </main>
   );
