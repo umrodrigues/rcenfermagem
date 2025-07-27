@@ -1,3 +1,4 @@
+import { BackToTopButton } from "../back-to-top/back-to-top-button";
 import Cookies from "../cookies/cookies";
 import Copyright from "../copyright/copyright";
 import Footer from "../footer/footer";
@@ -15,6 +16,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
      <Footer />
       <Copyright />
       <GoToWhatsapp />
+      <BackToTopButton />
       <Cookies />
     </>
   );

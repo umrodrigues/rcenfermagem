@@ -26,4 +26,17 @@
       transform: translateY(-2px);
     }
   }
+
+  @media (max-width: 1350px) {
+    padding: 1rem 1.5rem;
+
+    .logo img {
+      width: 150px;
+    }
+
+    .ctaButton {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+  }
 }

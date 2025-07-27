@@ -5,8 +5,6 @@ import { ViewportProvider } from './packages/ui/viewport/viewport';
 import { HomeContent } from './packages/components/home/home-content';
 
 //TODO - Loading entre telas
-//TODO - partners
-//TODO - Main Banners
 //TODO - Aplicar motion
 
 export default function Home() {
