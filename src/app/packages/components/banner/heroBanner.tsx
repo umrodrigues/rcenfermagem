@@ -7,12 +7,13 @@ import Image from 'next/image';
 import styles from './HeroBanner.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const bannerData = [
   {
     image: '/banner/banner1.jpeg',
     title: 'RC Enfermagem',
-    subtitle: 'Bem vindos a',
+    subtitle: 'Bem-vindo a',
     description: 'Para você um espaço de acolhimento e humanização nos cuidados em saúde',
   },
   {
@@ -59,7 +60,9 @@ export default function HeroBanner() {
                 {slide.subtitle && <h2>{slide.subtitle}</h2>}
                 <h1>{slide.title}</h1>
                 <p>{slide.description}</p>
-                <button className={styles.button}>Saiba Mais</button>
+                <Link href="/quem-somos" passHref>
+                  <button className={styles.button}>Saiba Mais</button>
+                </Link>
               </motion.div>
             </div>
           </div>
