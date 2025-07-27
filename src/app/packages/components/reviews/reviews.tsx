@@ -13,6 +13,7 @@ interface ReviewsProps {
 export default function Reviews({ layout = 'slider' }: ReviewsProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
+  const [sliderReady, setSliderReady] = useState(false);
 
   const toggleExpand = (idx: number) => {
     setExpandedIndexes((prev) =>
@@ -35,6 +36,9 @@ export default function Reviews({ layout = 'slider' }: ReviewsProps) {
           },
           slideChanged(s) {
             setCurrentSlide(s.track.details.rel);
+          },
+          created() {
+            setSliderReady(true);
           },
         }
       : undefined
@@ -85,11 +89,11 @@ export default function Reviews({ layout = 'slider' }: ReviewsProps) {
         })}
       </div>
 
-      {layout === 'slider' && (
+      {layout === 'slider' && sliderReady && (
         <div className={styles.dots}>
           {reviewsMock.length > 1 &&
             Array.from({
-              length: slider.current ? slider.current.track.details.slides.length : 0,
+              length: slider.current?.track.details.slides.length || 0,
             }).map((_, idx) => (
               <button
                 key={idx}
