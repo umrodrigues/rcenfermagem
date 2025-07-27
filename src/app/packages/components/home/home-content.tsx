@@ -17,7 +17,7 @@ export const HomeContent = () => {
       <OurSolutions />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <Reviews />
-      {/* <PartnerLogos/> */}
+      <PartnerLogos/>
     </DefaultLayout>
   );
 };
