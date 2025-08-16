@@ -1,6 +1,5 @@
 import { Spacer } from "../spacer/spacer";
 import { DefaultLayout } from '../default/default-layout';
-import CoreValues from "../values/coreValues";
 import ConsultorioSection from "../consultorio/consultorio-section";
 import OurSolutions from "../our-solutions/our-solutions";
 import Reviews from "../reviews/reviews";
@@ -11,7 +10,6 @@ export const HomeContent = () => {
   return (
     <DefaultLayout>
       <HeroBanner />
-      <CoreValues />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
       <ConsultorioSection />
       <Spacer spacing={'xl'} desktopSpacing={'xl'}/>
