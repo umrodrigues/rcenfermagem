@@ -13,21 +13,10 @@ export default function Header() {
 
   const [isSticky, setIsSticky] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const stripRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      const isOut = !entry.isIntersecting;
-      setIsSticky(isOut);
-      if (isOut) setHasScrolled(true);
-    });
-    if (stripRef.current) observer.observe(stripRef.current);
-    return () => {
-      if (stripRef.current) observer.unobserve(stripRef.current);
-    };
-  }, []);
+
 
   useEffect(() => {
     if (headerRef.current) {
