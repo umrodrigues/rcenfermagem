@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from './Header.module.scss';
-import StripBanner from '../stripe-banner/strip-banner';
 import { useBreakpoint } from '../../ui/viewport/viewport';
 import HeaderMobile from './mobile/header-mobile';
 import HeaderDesktop from './desktop/header-desktop';
@@ -38,9 +37,6 @@ export default function Header() {
 
   return (
     <>
-      <div ref={stripRef}>
-        <StripBanner />
-      </div>
 
       <div style={{ paddingTop: isSticky ? `${headerHeight}px` : 0 }}>
         {isSticky && hasScrolled ? (
