@@ -1,42 +1,205 @@
 .desktopNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 1.5rem 3rem;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 138, 61, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1000;
 
-  .logo img {
-    width: 220px;
-    height: auto;
-    object-fit: contain;
-  }
+  .headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 80px;
 
-  .ctaButton {
-    color: #ffffff;
-    padding: 12px 28px;
-    background-image: linear-gradient(250deg, #008a3d 0%, #00b377 100%);
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
+    .logo {
+      flex-shrink: 0;
+      
+      img {
+        width: 180px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
 
-    &:hover {
-      background-image: linear-gradient(250deg, #00b377 0%, #008a3d 100%);
-      transform: translateY(-2px);
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+
+    .navigation {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      margin: 0 2rem;
+    }
+
+    .actions {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .socialLinks {
+        display: flex;
+        gap: 0.75rem;
+
+        .socialLink {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: linear-gradient(135deg, #f8fffc 0%, #e8f5e8 100%);
+          color: #008a3d;
+          border-radius: 10px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(0, 138, 61, 0.1);
+
+          &:hover {
+            background: linear-gradient(135deg, #008a3d 0%, #00b377 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 138, 61, 0.3);
+          }
+
+          svg {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .ctaButton {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #ffffff;
+        padding: 0.875rem 1.75rem;
+        background: linear-gradient(135deg, #008a3d 0%, #00b377 100%);
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 138, 61, 0.3);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 138, 61, 0.4);
+          background: linear-gradient(135deg, #00b377 0%, #008a3d 100%);
+
+          &::before {
+            left: 100%;
+          }
+        }
+
+        .buttonIcon {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 
-  @media (max-width: 1350px) {
-    padding: 1rem 1.5rem;
+  @media (max-width: 1200px) {
+    .headerContent {
+      padding: 1rem 2rem;
 
-    .logo img {
-      width: 150px;
+      .logo img {
+        width: 160px;
+      }
+
+      .actions {
+        gap: 1rem;
+
+        .socialLinks {
+          gap: 0.5rem;
+
+          .socialLink {
+            width: 36px;
+            height: 36px;
+
+            svg {
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .ctaButton {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.875rem;
+        }
+      }
     }
+  }
 
-    .ctaButton {
-      padding: 8px 16px;
-      font-size: 0.8rem;
+  @media (max-width: 1024px) {
+    .headerContent {
+      padding: 1rem 1.5rem;
+
+      .logo img {
+        width: 140px;
+      }
+
+      .navigation {
+        margin: 0 1rem;
+      }
+
+      .actions {
+        .ctaButton {
+          padding: 0.625rem 1.25rem;
+          font-size: 0.8rem;
+
+          .buttonIcon {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .headerContent {
+      padding: 0.875rem 1rem;
+
+      .logo img {
+        width: 120px;
+      }
+
+      .actions {
+        .socialLinks {
+          display: none;
+        }
+
+        .ctaButton {
+          padding: 0.5rem 1rem;
+          font-size: 0.75rem;
+
+          span {
+            display: none;
+          }
+
+          .buttonIcon {
+            font-size: 1.1rem;
+          }
+        }
+      }
     }
   }
 }

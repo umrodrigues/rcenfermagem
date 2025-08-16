@@ -1,122 +1,142 @@
 .footer {
+  background: linear-gradient(135deg, #f8fffc 0%, #e8f5e8 100%);
+  color: #2d5a3d;
+  padding: 2rem 0;
   position: relative;
-  background: url('/footer.png') no-repeat center center;
-  background-size: cover;
-  color: #ffffff;
-  padding: 3rem 2rem;
-  font-size: 0.95rem;
-  z-index: 0;
-}
+  width: 100%;
 
-.footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #008a3d, transparent);
+  }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: space-between;
-}
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 2rem;
+  }
 
-.logoSection {
-  flex: 1;
-  min-width: 250px;
-}
+  .mainContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 
-.logoSection img {
-  height: 60px;
-  margin-bottom: 1.5rem;
-}
+    .brandSection {
+      flex-shrink: 0;
 
-.logoSection p {
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
+      .logoContainer {
+        img {
+          height: 50px;
+          width: auto;
+          filter: brightness(0.9);
+        }
+      }
+    }
 
-.logoSection .social {
-  display: flex;
-  gap: 1rem;
-}
+    .contactSection {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
 
-.logoSection .social a {
-  background: #ffffff;
-  color: #004b12;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.3s;
-}
+      .contactInfo {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
 
-.logoSection .social a:hover {
-  background: #007a35;
-  color: #ffffff;
-}
+        .contactItem {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          min-width: 200px;
 
-.linksSection {
-  flex: 1;
-  min-width: 200px;
-}
+          .icon {
+            color: #008a3d;
+            font-size: 1rem;
+            flex-shrink: 0;
+          }
 
-.linksSection h4 {
-  color: #b5ffcb;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
+          span {
+            color: #4a6b5a;
+            font-size: 0.9rem;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
 
-.linksSection ul {
-  list-style: none;
-  padding: 0;
-}
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
 
-.linksSection ul li {
-  margin-bottom: 0.75rem;
-}
+    .container {
+      padding: 0 1.5rem;
+    }
 
-.linksSection ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+    .mainContent {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
 
-.linksSection ul li a:hover {
-  color: #b5ffcb;
-}
+      .brandSection {
+        .logoContainer img {
+          height: 45px;
+        }
+      }
 
-.contactSection {
-  flex: 1.2;
-  min-width: 280px;
-}
+      .contactSection {
+        justify-content: center;
 
-.contactSection h4 {
-  color: #b5ffcb;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
+        .contactInfo {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
 
-.contactSection ul {
-  list-style: none;
-  padding: 0;
-}
+          .contactItem {
+            min-width: auto;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
 
-.contactSection ul li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-}
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
 
-.contactSection ul li svg {
-  color: #b5ffcb;
-  min-width: 16px;
+    .mainContent {
+      gap: 1rem;
+
+      .brandSection .logoContainer img {
+        height: 40px;
+      }
+
+      .contactSection .contactInfo {
+        gap: 0.75rem;
+
+        .contactItem {
+          gap: 0.375rem;
+
+          .icon {
+            font-size: 0.9rem;
+          }
+
+          span {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
 }

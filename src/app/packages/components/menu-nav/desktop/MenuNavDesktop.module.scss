@@ -1,31 +1,51 @@
 .navMenu {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
 
   .menuItem {
     color: #008a3d;
     text-decoration: none;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     position: relative;
-    padding: 0.5rem 0;
-    transition: color 0.3s;
+    padding: 0.75rem 0;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
 
     &:hover {
-      color: #010603;
+      color: #00b377;
+      transform: translateY(-1px);
     }
 
     a {
       color: inherit;
       text-decoration: none;
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #008a3d, #00b377);
+      border-radius: 2px;
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   }
 
   .arrow {
     font-size: 0.75rem;
-    margin-left: 4px;
+    margin-left: 6px;
+    transition: transform 0.3s;
   }
 
   .dropdown {
@@ -33,41 +53,94 @@
     display: flex;
     flex-direction: column;
 
-    &:hover .dropdownContent {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
+    &:hover {
+      .dropdownContent {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .arrow {
+        transform: rotate(180deg);
+      }
     }
 
     .dropdownContent {
       position: absolute;
       top: 100%;
       left: 0;
+      transform: translateY(0);
       background: #ffffff;
-      border: 1px solid #d0d0d0;
-      border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 0.75rem 1rem;
-      min-width: 220px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      padding: 1rem 0;
+      min-width: 240px;
       display: flex;
       flex-direction: column;
       opacity: 0;
       pointer-events: none;
-      transform: translateY(10px);
       transition: all 0.3s ease;
       z-index: 1000;
+      border: 1px solid #e8f5e8;
+      margin-top: 0.5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #ffffff;
+      }
 
       .dropdownLink {
         color: #008a3d;
         text-decoration: none;
-        padding: 0.5rem 0;
+        padding: 0.75rem 1.5rem;
         font-weight: 500;
-        transition: color 0.2s;
+        transition: all 0.3s;
+        position: relative;
+        display: flex;
+        align-items: center;
 
         &:hover {
-          color: #010603;
+          color: #00b377;
+          background: linear-gradient(90deg, rgba(0, 138, 61, 0.05) 0%, rgba(0, 179, 119, 0.05) 100%);
+          transform: translateX(5px);
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #008a3d, #00b377);
+            border-radius: 0 2px 2px 0;
+          }
+        }
+
+        &:first-child {
+          border-radius: 16px 16px 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 0 16px 16px;
         }
       }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 0.5rem;
+      background: transparent;
     }
   }
 }

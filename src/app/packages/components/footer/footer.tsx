@@ -1,41 +1,38 @@
+'use client';
+
 import styles from './Footer.module.scss';
-import { FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logoSection}>
-          <img src="/logo.png" alt="Enfermagem Para Você" />
-          <p>
-            Nos orgulhamos da capacidade de mudar e impactar vidas de maneira saudável.
-            Tem curiosidade de saber mais? Entre em contato com nossa equipe ainda hoje.
-          </p>
-          <div className={styles.social}>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
+        <div className={styles.mainContent}>
+          <div className={styles.brandSection}>
+            <div className={styles.logoContainer}>
+              <img src="/logo.png" alt="RC Enfermagem" />
+            </div>
           </div>
-        </div>
 
-        <div className={styles.linksSection}>
-          <h4>Institucional</h4>
-          <ul>
-            <li><a href="/quem-somos">Quem Somos</a></li>
-            <li><a href="/servicos">Serviços</a></li>
-            <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
-            <li><a href="/termos-de-uso">Termos de Uso</a></li>
-          </ul>
-        </div>
-
-        <div className={styles.contactSection}>
-          <h4>Contato</h4>
-          <ul>
-            <li><FaMapMarkerAlt /> Rua Ramiro Barcelos, 630/1310 - Porto Alegre/RS</li>
-            <li><FaPhoneAlt /> (51) 98416.3243 - Lúcio</li>
-            <li><FaPhoneAlt /> (51) 99782.2982 - Grasiele</li>
-            <li><FaEnvelope /> contato@rcenfermagemparavoce.com.br</li>
-            <li><FaClock /> Suporte 08:00h às 18:00h</li>
-          </ul>
+          <div className={styles.contactSection}>
+            <div className={styles.contactInfo}>
+              <div className={styles.contactItem}>
+                <FaMapMarkerAlt className={styles.icon} />
+                <span>Rua Ramiro Barcelos, 630/1310<br />Porto Alegre/RS</span>
+              </div>
+              
+              <div className={styles.contactItem}>
+                <FaPhoneAlt className={styles.icon} />
+                <span>(51) 99782.2982</span>
+              </div>
+              
+              <div className={styles.contactItem}>
+                <FaEnvelope className={styles.icon} />
+                <span>contato@rcenfermagemparavoce.com.br</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
