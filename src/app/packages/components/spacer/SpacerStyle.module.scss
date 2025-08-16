@@ -1,4 +1,4 @@
-@import '../../ui/styles/mixins.scss';
+@use '../../ui/styles/mixins' as mixins;
 
 .containerSpacer {
   width: 100%;
@@ -43,7 +43,7 @@
     height: 7.5rem;
   }
 
-  @include media('l') {
+  @include mixins.media('l') {
     &.desktop-spacing-none {
       height: 0rem;
     }
