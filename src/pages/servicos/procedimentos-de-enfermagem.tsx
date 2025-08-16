@@ -8,24 +8,12 @@ import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import ServiceSection from '@/app/packages/components/service-section/service-section';
-import { useLoadingStore } from '../../app/stores/loadingStore';
 
 export const mockTitle = 'Procedimentos de enfermagem'
 
-export const mockText = `Os procedimentos de enfermagem são técnicas e métodos utilizados pelos profissionais de enfermagem para prestar cuidados aos pacientes. Esses procedimentos incluem desde técnicas básicas como aferição de sinais vitais, até procedimentos mais complexos como curativos, administração de medicamentos, sondagens e outros cuidados especializados.`
+export const mockText = `Os procedimentos de enfermagem são técnicas especializadas realizadas por profissionais qualificados para promover, manter e restaurar a saúde do paciente. Estes procedimentos incluem curativos, coleta de exames, monitoramento de sinais vitais e outros cuidados técnicos.`
 
 export default function ProcedimentosDeEnfermagem() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
@@ -40,7 +28,7 @@ export default function ProcedimentosDeEnfermagem() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/imgblog2.jpeg" 
+              imageSrc="/imgblog3.jpeg" 
             />
         </DefaultLayout>
     </ViewportProvider>

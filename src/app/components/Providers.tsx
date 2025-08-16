@@ -10,12 +10,18 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useLoading()
 
   useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    const handleLoad = () => {
+      setTimeout(() => {
+        setLoading(false)
+      }, 1800)
+    }
 
-    return () => clearTimeout(timer)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', handleLoad)
+      return () => document.removeEventListener('DOMContentLoaded', handleLoad)
+    } else {
+      handleLoad()
+    }
   }, [setLoading])
 
   return (

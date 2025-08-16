@@ -9,31 +9,19 @@ import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import Reviews from '@/app/packages/components/reviews/reviews';
-import { useLoadingStore } from '../app/stores/loadingStore';
-
 
 export default function Depoimentos() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
-          <Breadcrumb
-                      items={[
-                          { name: 'Inicio', url: '/' },
-                          { name: 'Depoimentos', url: '' },
-                      ]}
-                      />
-          <Reviews layout="grid" />
+          <Breadcrumb 
+            title="Depoimentos"
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Depoimentos', href: '/depoimentos' }
+            ]}
+          />
+          <Reviews />
         </DefaultLayout>
     </ViewportProvider>
   );

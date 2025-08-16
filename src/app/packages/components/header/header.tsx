@@ -13,20 +13,33 @@ export default function Header() {
 
   const [isSticky, setIsSticky] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-
+  const [headerHeight, setHeaderHeight] = useState(80);
 
   useEffect(() => {
-    if (headerRef.current) {
-      setHeaderHeight(headerRef.current.offsetHeight);
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shouldBeSticky = scrollTop > 100;
+      setIsSticky(shouldBeSticky);
+      setHasScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    setIsReady(true);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (headerRef.current && isReady) {
+      const height = headerRef.current.offsetHeight;
+      setHeaderHeight(height > 0 ? height : 80);
     }
-  }, [isSticky, isMobileOrTablet]);
+  }, [isSticky, isMobileOrTablet, isReady]);
 
   return (
     <>
-
       <div style={{ paddingTop: isSticky ? `${headerHeight}px` : 0 }}>
         {isSticky && hasScrolled ? (
           <motion.div

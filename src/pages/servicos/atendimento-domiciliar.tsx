@@ -8,24 +8,12 @@ import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import ServiceSection from '@/app/packages/components/service-section/service-section';
-import { useLoadingStore } from '../../app/stores/loadingStore';
 
 export const mockTitle = 'Atendimento domiciliar'
 
-export const mockText = `O atendimento domiciliar é um serviço de enfermagem que oferece cuidados profissionais no conforto da casa do paciente. Este tipo de atendimento é ideal para pessoas que têm dificuldade de locomoção, idosos, pacientes em recuperação pós-cirúrgica ou que necessitam de cuidados contínuos.`
+export const mockText = `O atendimento domiciliar é um serviço especializado que leva cuidados de enfermagem diretamente à residência do paciente. Este serviço oferece conforto, praticidade e atenção personalizada, permitindo que o paciente receba os cuidados necessários no ambiente familiar.`
 
 export default function AtendimentoDomiciliar() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
@@ -40,7 +28,7 @@ export default function AtendimentoDomiciliar() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/imgblog3.jpeg" 
+              imageSrc="/imgblog2.jpeg" 
             />
         </DefaultLayout>
     </ViewportProvider>

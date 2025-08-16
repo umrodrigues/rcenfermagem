@@ -8,31 +8,18 @@ import "../app/packages/ui/styles/globals.scss";
 import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
-import { useLoadingStore } from '../app/stores/loadingStore';
-
 
 export default function Equipe() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
-            <Breadcrumb
+          <Breadcrumb 
+            title="Equipe"
             items={[
-                { name: 'Home', url: '/' },
-                { name: 'Equipe', url: '/equipe' },
-                { name: 'Detalhes', url: '' },
+              { label: 'Home', href: '/' },
+              { label: 'Equipe', href: '/equipe' }
             ]}
-            />
+          />
         </DefaultLayout>
     </ViewportProvider>
   );

@@ -5,17 +5,31 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ParticleBackground } from './ParticleBackground'
 import { WaveEffect } from './WaveEffect'
 import { AnimatedText } from './AnimatedText'
+import { useEffect } from 'react'
 
 export function GlobalLoading() {
   const { isLoading } = useLoadingStore()
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add('loading')
+    } else {
+      document.body.classList.remove('loading')
+    }
+
+    return () => {
+      document.body.classList.remove('loading')
+    }
+  }, [isLoading])
+
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
           style={{
             position: 'fixed',
             top: 0,
@@ -27,33 +41,38 @@ export function GlobalLoading() {
             alignItems: 'center',
             justifyContent: 'center',
             background: 'linear-gradient(135deg, rgba(0, 138, 61, 0.95), rgba(0, 0, 0, 0.9))',
-            backdropFilter: 'blur(8px)'
+            backdropFilter: 'blur(8px)',
+            width: '100vw',
+            height: '100vh'
           }}
         >
           <ParticleBackground />
-          <WaveEffect />
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: '24px',
               padding: '40px',
               borderRadius: '20px',
               background: 'rgba(255, 255, 255, 0.1)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
-              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
+              position: 'relative',
+              zIndex: 10
             }}
           >
-            <div style={{ position: 'relative' }}>
+            <WaveEffect />
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                 style={{
                   width: '80px',
                   height: '80px',
@@ -65,7 +84,7 @@ export function GlobalLoading() {
               />
               <motion.div
                 animate={{ rotate: -360 }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                 style={{
                   width: '60px',
                   height: '60px',
@@ -83,7 +102,7 @@ export function GlobalLoading() {
                   opacity: [0.5, 1, 0.5]
                 }}
                 transition={{ 
-                  duration: 2, 
+                  duration: 1.5, 
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -103,12 +122,14 @@ export function GlobalLoading() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '8px'
+                justifyContent: 'center',
+                gap: '8px',
+                width: '100%'
               }}
             >
               <AnimatedText />
@@ -118,7 +139,7 @@ export function GlobalLoading() {
                   width: [0, 100, 0]
                 }}
                 transition={{ 
-                  duration: 2, 
+                  duration: 1.5, 
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -136,13 +157,14 @@ export function GlobalLoading() {
                 opacity: [0.3, 1, 0.3]
               }}
               transition={{ 
-                duration: 1, 
+                duration: 0.8, 
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
               style={{
                 display: 'flex',
-                gap: '8px'
+                gap: '8px',
+                justifyContent: 'center'
               }}
             >
               {[0, 1, 2].map((i) => (
@@ -153,9 +175,9 @@ export function GlobalLoading() {
                     scale: [1, 1.2, 1]
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.5, 
                     repeat: Infinity,
-                    delay: i * 0.2,
+                    delay: i * 0.15,
                     ease: "easeInOut"
                   }}
                   style={{
@@ -163,7 +185,7 @@ export function GlobalLoading() {
                     height: '8px',
                     background: '#00ff88',
                     borderRadius: '50%',
-                    boxShadow: '0 0 10px rgba(0, 255, 136, 0.6)'
+                    boxShadow: '0 0 10px rgba(255, 136, 0.6)'
                   }}
                 />
               ))}

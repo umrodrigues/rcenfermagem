@@ -9,12 +9,14 @@ export function useLoading() {
   const pathname = usePathname()
 
   useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 300)
+    if (pathname !== '/') {
+      setLoading(true)
+      const timer = setTimeout(() => {
+        setLoading(false)
+      }, 500)
 
-    return () => clearTimeout(timer)
+      return () => clearTimeout(timer)
+    }
   }, [pathname, setLoading])
 
   return { setLoading }

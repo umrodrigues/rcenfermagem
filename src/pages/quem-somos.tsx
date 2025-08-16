@@ -9,33 +9,19 @@ import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import AboutUs from '@/app/packages/components/about-us/about-us';
-import { useLoadingStore } from '../app/stores/loadingStore';
-
 
 export default function QuemSomos() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
-          <Breadcrumb
-             items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Quem somos', url: '' },
-                    ]}
-            />
-
-        <AboutUs />
-
+          <Breadcrumb 
+            title="Quem Somos"
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Quem Somos', href: '/quem-somos' }
+            ]}
+          />
+          <AboutUs />
         </DefaultLayout>
     </ViewportProvider>
   );

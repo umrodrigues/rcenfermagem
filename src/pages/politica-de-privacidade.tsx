@@ -9,33 +9,19 @@ import { ViewportProvider } from '@/app/packages/ui/viewport/viewport';
 import { DefaultLayout } from '@/app/packages/components/default/default-layout';
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import PrivacyPolicy from '@/app/packages/components/privacy-policy/privacy-policy';
-import { useLoadingStore } from '../app/stores/loadingStore';
-
 
 export default function PoliticaDePrivacidade() {
-  const { setLoading } = useLoadingStore()
-
-  useEffect(() => {
-    setLoading(true)
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 800)
-
-    return () => clearTimeout(timer)
-  }, [setLoading])
-
   return (
     <ViewportProvider>
         <DefaultLayout>
-            <Breadcrumb
+          <Breadcrumb 
+            title="Política de Privacidade"
             items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Política de privacidade', url: '' },
+              { label: 'Home', href: '/' },
+              { label: 'Política de Privacidade', href: '/politica-de-privacidade' }
             ]}
-            />
-
-            <PrivacyPolicy />
-           
+          />
+          <PrivacyPolicy />
         </DefaultLayout>
     </ViewportProvider>
   );

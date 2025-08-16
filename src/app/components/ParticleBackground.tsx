@@ -1,8 +1,34 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export function ParticleBackground() {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
+
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  if (!isClient) {
+    return <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }} />
+  }
+
   const particles = Array.from({ length: 20 }, (_, i) => i)
 
   return (
@@ -11,13 +37,13 @@ export function ParticleBackground() {
         <motion.div
           key={i}
           initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: Math.random() * dimensions.width,
+            y: Math.random() * dimensions.height,
             opacity: 0
           }}
           animate={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: Math.random() * dimensions.width,
+            y: Math.random() * dimensions.height,
             opacity: [0, 0.6, 0]
           }}
           transition={{
