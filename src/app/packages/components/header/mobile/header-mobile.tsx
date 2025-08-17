@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from './HeaderMobile.module.scss';
 import Image from 'next/image';
-import { FaBars, FaTimes, FaWhatsapp, FaFacebookF, FaInstagram, FaPhone } from 'react-icons/fa';
+import { FaBars, FaTimes, FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import MenuNav from '../../menu-nav/MenuNav';
 import Link from 'next/link';
 
@@ -29,9 +29,6 @@ export default function HeaderMobile() {
               </Link>
               <Link href="#" className={styles.socialLink} aria-label="Instagram">
                 <FaInstagram />
-              </Link>
-              <Link href="tel:5551997822982" className={styles.socialLink} aria-label="Telefone">
-                <FaPhone />
               </Link>
             </div>
             

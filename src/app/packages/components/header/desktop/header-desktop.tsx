@@ -4,7 +4,7 @@ import styles from './HeaderDesktop.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import MenuNav from '../../menu-nav/MenuNav';
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaPhone } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 export default function HeaderDesktop() {
   return (
@@ -27,9 +27,6 @@ export default function HeaderDesktop() {
             </Link>
             <Link href="#" className={styles.socialLink} aria-label="Instagram">
               <FaInstagram />
-            </Link>
-            <Link href="tel:5551997822982" className={styles.socialLink} aria-label="Telefone">
-              <FaPhone />
             </Link>
           </div>
           
