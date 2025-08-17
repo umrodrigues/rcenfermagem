@@ -52,7 +52,6 @@ export default function ServiceSection({
                 className={styles.image}
                 priority
               />
-              <div className={styles.imageOverlay} />
             </div>
           </div>
 
