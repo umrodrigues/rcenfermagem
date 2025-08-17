@@ -21,7 +21,7 @@ export default function Depoimentos() {
               { label: 'Depoimentos', href: '/depoimentos' }
             ]}
           />
-          <Reviews />
+          <Reviews layout="grid" />
         </DefaultLayout>
     </ViewportProvider>
   );
