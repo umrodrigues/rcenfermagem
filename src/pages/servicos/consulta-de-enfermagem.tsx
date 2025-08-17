@@ -10,9 +10,31 @@ import { DefaultLayout } from '@/app/packages/components/default/default-layout'
 import Breadcrumb from '@/app/packages/components/breadcrumb/breadcrumb';
 import ServiceSection from '@/app/packages/components/service-section/service-section';
 
-export const mockTitle = 'Consulta de enfermagem'
+export const mockTitle = 'Consulta de Enfermagem'
 
-export const mockText = `A consulta de enfermagem é um processo sistemático de avaliação, diagnóstico, planejamento, implementação e avaliação dos cuidados prestados ao paciente. Este serviço inclui uma avaliação completa do estado de saúde, orientações personalizadas e acompanhamento contínuo.`
+export const mockText = `A consulta de enfermagem é um processo sistemático de avaliação, diagnóstico, planejamento, implementação e avaliação dos cuidados prestados ao paciente.
+
+Oferecemos acompanhamento individualizado com avaliação completa, orientações personalizadas e plano de cuidados exclusivo. Atuamos com foco na prevenção, promoção da saúde, bem-estar e reabilitação.
+
+Nossa consulta inclui uma avaliação completa do estado de saúde, orientações personalizadas baseadas nas necessidades individuais e um plano de cuidados exclusivo e detalhado.`
+
+export const mockFeatures = [
+  'Avaliação completa do estado de saúde',
+  'Orientações personalizadas baseadas nas necessidades individuais',
+  'Plano de cuidados exclusivo e detalhado',
+  'Acompanhamento contínuo e monitoramento dos resultados',
+  'Foco na prevenção e promoção da saúde',
+  'Atendimento humanizado e acolhedor'
+]
+
+export const mockBenefits = [
+  'Cuidado personalizado e individualizado',
+  'Prevenção de complicações',
+  'Melhoria da qualidade de vida',
+  'Orientação especializada em enfermagem',
+  'Acompanhamento contínuo',
+  'Segurança e conforto no atendimento'
+]
 
 export default function ConsultaDeEnfermagem() {
   return (
@@ -30,7 +52,9 @@ export default function ConsultaDeEnfermagem() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/imgblog1.jpeg" 
+              imageSrc="/images/fundo1.jpeg"
+              features={mockFeatures}
+              benefits={mockBenefits}
             />
         </DefaultLayout>
     </ViewportProvider>

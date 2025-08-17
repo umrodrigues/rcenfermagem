@@ -38,7 +38,7 @@ export default function ServicesGrid() {
             <div className={styles.cardContent}>
               <h3 className={styles.serviceTitle}>{item.titulo}</h3>
               <p className={styles.serviceDescription}>
-                Cuidado especializado e personalizado para suas necessidades.
+                {item.descricao}
               </p>
               <div className={styles.cardFooter}>
                 <span className={styles.serviceType}>Serviço</span>

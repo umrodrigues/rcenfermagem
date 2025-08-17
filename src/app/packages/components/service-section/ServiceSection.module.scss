@@ -6,101 +6,265 @@ $text: #333;
 .section {
   padding: 4rem 1rem;
   background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.titleIcon {
+  font-size: 2.5rem;
+  color: $green;
+  animation: pulse 2s infinite;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 700;
   color: $dark;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
+  margin: 0;
+  line-height: 1.2;
 
-  &::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background: $green;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
   }
 }
 
-.card {
+.contentGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  background-color: $light-green;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  padding: 2rem;
-  align-items: center;
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-  }
+  gap: 3rem;
+  margin-bottom: 3rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
+}
+
+.imageSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageWrapper {
   width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
-.content {
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(1, 133, 58, 0.1) 0%, rgba(1, 133, 58, 0.3) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.textSection {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 2rem;
 }
 
-.text {
+.description {
   font-size: 1.125rem;
   line-height: 1.7;
   color: $text;
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+}
+
+.features, .benefits {
+  background: $light-green;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid $green;
+
+  @media (max-width: 768px) {
+    padding: 1.25rem;
+  }
+}
+
+.featuresTitle, .benefitsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $dark;
+  margin: 0 0 1rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.featuresList, .benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featureItem, .benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $text;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+}
+
+.checkIcon {
+  color: $green;
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.benefitIcon {
+  color: $green;
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.contactSection {
+  background: linear-gradient(135deg, $light-green 0%, #f8f9fa 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(1, 133, 58, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.contactInfo {
   margin-bottom: 2rem;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(34, 197, 94, 0.1);
+.contactTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $dark;
+  margin: 0 0 0.5rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 
-.contactButton {
+.contactDescription {
+  font-size: 1.1rem;
+  color: $text;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.contactButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contactButton, .whatsappButton {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: white;
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 200px;
+  justify-content: center;
   
   &::before {
     content: '';
@@ -115,8 +279,7 @@ $text: #333;
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
-    background: linear-gradient(135deg, #4ade80, #22c55e);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     
     &::before {
       left: 100%;
@@ -134,12 +297,36 @@ $text: #333;
   &:active {
     transform: translateY(0);
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+.contactButton {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+  }
+}
+
+.whatsappButton {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #4ade80, #25d366);
+  }
 }
 
 .buttonContent {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.25rem;
   position: relative;
   z-index: 1;
@@ -164,27 +351,11 @@ $text: #333;
   transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
-  }
-  
-  .card {
-    padding: 1.5rem;
-  }
-  
-  .text {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contactButton {
-    padding: 1rem 2rem;
-    width: 100%;
-    justify-content: center;
-    
+  .contactButton, .whatsappButton {
     .buttonQuestion {
       font-size: 0.75rem;
     }
@@ -197,23 +368,26 @@ $text: #333;
 
 @media (max-width: 480px) {
   .section {
-    padding: 3rem 0.75rem;
+    padding: 2rem 0.75rem;
   }
   
   .title {
     font-size: 1.75rem;
   }
   
-  .card {
+  .contentGrid {
+    gap: 1.5rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+  
+  .contactSection {
     padding: 1.25rem;
   }
   
-  .text {
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .contactButton {
+  .contactButton, .whatsappButton {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
