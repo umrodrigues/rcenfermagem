@@ -19,11 +19,12 @@ export default function ConsultaDeEnfermagem() {
     <ViewportProvider>
         <DefaultLayout>
             <Breadcrumb
-            items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Serviços', url: '/servicos' },
-                { name: 'Consulta de enfermagem', url: '' },
-            ]}
+              title="Consulta de Enfermagem"
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Serviços', href: '/servicos' },
+                { label: 'Consulta de Enfermagem', href: '' },
+              ]}
             />
 
              <ServiceSection

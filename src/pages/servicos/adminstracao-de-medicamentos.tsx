@@ -18,11 +18,12 @@ export default function AdministracaoDeMedicamentos() {
     <ViewportProvider>
         <DefaultLayout>
             <Breadcrumb
-            items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Serviços', url: '/servicos' },
-                { name: 'Administração de medicamentos', url: '' },
-            ]}
+              title="Administração de Medicamentos"
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Serviços', href: '/servicos' },
+                { label: 'Administração de Medicamentos', href: '' },
+              ]}
             />
 
              <ServiceSection

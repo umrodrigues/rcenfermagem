@@ -1,85 +1,320 @@
-@use '../../ui/styles/mixins' as mixins;
-
 .contactSection {
-  background: #f5f7f8;
-  padding: 4rem 1rem;
-
-  h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    color: #13131f;
-  }
+  background: #f8fafc;
+  padding: 4rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContainer {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.titleContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 2px;
+  }
+}
+
+.titleUnderline {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+  border-radius: 1px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .infoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-bottom: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 4rem;
 }
 
 .card {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
-  background: linear-gradient(135deg, #014724, #016a37);
-  color: #fff;
-  border-radius: 10px;
-  padding: 1rem 1.3rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  svg {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-    color: #d9fadd;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e5e7eb;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border-radius: 16px 16px 0 0;
   }
-
-  h2 {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    color: #ffffff;
-  }
-
-  p, a {
-    font-size: 0.9rem;
-    color: #ffffff;
-    text-decoration: none;
-    line-height: 1.4;
-    word-break: break-word;
-
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-
-  a {
-    overflow-wrap: break-word;
-  }
-
+  
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #d1d5db;
   }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.cardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.phoneLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phoneLink {
+  font-size: 0.95rem;
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: #16a34a;
+    transform: translateX(2px);
+  }
+}
+
+.emailLink {
+  font-size: 0.95rem;
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  word-break: break-word;
+  
+  &:hover {
+    color: #16a34a;
+    transform: translateX(2px);
+  }
+}
+
+.mapSection {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mapHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mapTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.mapSubtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
 }
 
 .mapWrapper {
   iframe {
     width: 100%;
-    height: 360px;
+    height: 400px;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
   }
+}
 
-  display: flex;
-  justify-content: center;
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 3rem 1rem 4rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    
+    &::before {
+      width: 50px;
+      height: 2px;
+      bottom: -5px;
+    }
+  }
+  
+  .titleUnderline {
+    width: 60px;
+    bottom: -8px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .headerContainer {
+    margin-bottom: 3rem;
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon {
+    font-size: 1.1rem;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+  }
+  
+  .cardText, .phoneLink, .emailLink {
+    font-size: 0.9rem;
+  }
+  
+  .mapTitle {
+    font-size: 1.25rem;
+  }
+  
+  .mapSubtitle {
+    font-size: 0.95rem;
+  }
+  
+  .mapWrapper iframe {
+    height: 300px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 2.5rem 0.75rem 3.5rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  .iconWrapper {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .icon {
+    font-size: 1rem;
+  }
+  
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+  
+  .cardText, .phoneLink, .emailLink {
+    font-size: 0.85rem;
+  }
+  
+  .mapWrapper iframe {
+    height: 250px;
+    border-radius: 10px;
+  }
 }

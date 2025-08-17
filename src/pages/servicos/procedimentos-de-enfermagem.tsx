@@ -18,11 +18,12 @@ export default function ProcedimentosDeEnfermagem() {
     <ViewportProvider>
         <DefaultLayout>
             <Breadcrumb
-            items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Serviços', url: '/servicos' },
-                { name: 'Procedimentos de enfermagem', url: '' },
-            ]}
+              title="Procedimentos de Enfermagem"
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Serviços', href: '/servicos' },
+                { label: 'Procedimentos de Enfermagem', href: '' },
+              ]}
             />
 
              <ServiceSection

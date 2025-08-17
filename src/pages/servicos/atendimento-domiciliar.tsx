@@ -18,11 +18,12 @@ export default function AtendimentoDomiciliar() {
     <ViewportProvider>
         <DefaultLayout>
             <Breadcrumb
-            items={[
-                { name: 'Inicio', url: '/' },
-                { name: 'Serviços', url: '/servicos' },
-                { name: 'Atendimento domiciliar', url: '' },
-            ]}
+              title="Atendimento Domiciliar"
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Serviços', href: '/servicos' },
+                { label: 'Atendimento Domiciliar', href: '' },
+              ]}
             />
 
              <ServiceSection

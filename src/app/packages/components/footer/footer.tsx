@@ -34,6 +34,35 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        
+        <div className={styles.legalSection}>
+          <div className={styles.legalLinks}>
+            <Link href="/politica-de-privacidade" className={styles.legalLink}>
+              Política de Privacidade
+            </Link>
+            <span className={styles.separator}>•</span>
+            <Link href="/termos-de-uso" className={styles.legalLink}>
+              Termos de Uso
+            </Link>
+          </div>
+          <div className={styles.copyright}>
+            © 2024 RC Enfermagem. Todos os direitos reservados.
+          </div>
+        </div>
+        
+        <div className={styles.developmentSection}>
+          <span className={styles.developmentText}>
+            Development by{' '}
+            <a
+              href="https://www.lunaristech.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.developmentLink}
+            >
+              Lunaris Tech
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );

@@ -65,8 +65,156 @@ $text: #333;
   object-fit: cover;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .text {
   font-size: 1.125rem;
   line-height: 1.7;
   color: $text;
+  margin-bottom: 2rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    
+    &::before {
+      left: 100%;
+    }
+    
+    .buttonIcon {
+      transform: translateX(4px);
+    }
+    
+    .buttonAction {
+      transform: translateX(1px);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.buttonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.buttonQuestion {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.buttonAction {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.3s ease;
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contactButton {
+    padding: 1rem 2rem;
+    width: 100%;
+    justify-content: center;
+    
+    .buttonQuestion {
+      font-size: 0.75rem;
+    }
+    
+    .buttonAction {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .text {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .contactButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
