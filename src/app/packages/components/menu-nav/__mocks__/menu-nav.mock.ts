@@ -14,6 +14,7 @@ export const menuMock = [
       { label: 'Atendimento Domiciliar', href: '/servicos/atendimento-domiciliar' },
       { label: 'Teleconsulta', href: '/servicos/teleconsulta' },
       { label: 'Atendimento Capilar', href: '/servicos/atendimento-capilar' },
+      { label: 'Laserterapia', href: '/servicos/laserterapia' },
       { label: 'RC Educação', href: '/servicos/rc-educacao' },
     ],
   },

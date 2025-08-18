@@ -50,6 +50,13 @@ export const servicesMock = [
   },
   {
     id: 8,
+    titulo: 'Laserterapia',
+    descricao: 'Tratamento avançado com laser para lesões, feridas e problemas de pele com tecnologia de ponta.',
+    imagem: '/grasi2.jpg',
+    link: '/servicos/laserterapia',
+  },
+  {
+    id: 9,
     titulo: 'RC Educação',
     descricao: 'Cursos e treinamentos especializados em enfermagem com metodologia dinâmica e professores experientes.',
     imagem: '/cursosetreinamentos.jpg',

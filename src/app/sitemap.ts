@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/servicos/laserterapia`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/servicos/rc-educacao`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
