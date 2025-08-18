@@ -74,7 +74,6 @@ export default function OurSolutions() {
     }
   }, [handleScroll]);
 
-  // Auto-scroll para desktop
   useEffect(() => {
     if (!isMobile && !isScrolling) {
       const interval = setInterval(() => {
@@ -85,6 +84,13 @@ export default function OurSolutions() {
       return () => clearInterval(interval);
     }
   }, [currentIndex, isMobile, isScrolling, scrollToIndex]);
+
+  // Garantir que o carrossel seja inicializado corretamente
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+    }
+  }, []);
 
   return (
     <section className={styles.section}>
@@ -105,7 +111,7 @@ export default function OurSolutions() {
               className={`${styles.arrow} ${styles.arrowLeft}`} 
               onClick={() => scroll('left')}
               aria-label="Anterior"
-              disabled={isScrolling}
+              disabled={isScrolling || currentIndex === 0}
             >
               <FaArrowLeft />
             </button>
@@ -142,7 +148,7 @@ export default function OurSolutions() {
               className={`${styles.arrow} ${styles.arrowRight}`} 
               onClick={() => scroll('right')}
               aria-label="Próximo"
-              disabled={isScrolling}
+              disabled={isScrolling || currentIndex === servicesMock.length - 1}
             >
               <FaArrowRight />
             </button>

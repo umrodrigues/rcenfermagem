@@ -22,7 +22,6 @@ export default function ServiceSection({
   features = [],
   benefits = []
 }: ServiceSectionProps) {
-  // Função para renderizar o texto com quebras de linha
   const renderText = (text: string) => {
     return text.split('\n').map((line, index) => (
       <p key={index} style={{ marginBottom: line.trim() === '' ? '1rem' : '0.5rem' }}>

@@ -1,8 +1,12 @@
 .section {
-  padding: 5rem 1rem;
+  padding: 5rem 2rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   &::before {
     content: '';
@@ -16,6 +20,7 @@
 
   @media (max-width: 768px) {
     padding: 3rem 1rem;
+    min-height: auto;
   }
 
   @media (max-width: 480px) {
@@ -27,6 +32,16 @@
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
+  width: 100%;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.5rem;
+  }
 }
 
 .header {
@@ -110,7 +125,11 @@
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 4rem;
+
+  @media (max-width: 1024px) {
+    padding: 0 3rem;
+  }
 
   @media (max-width: 768px) {
     padding: 0 1rem;
@@ -129,6 +148,11 @@
   scroll-behavior: smooth;
   padding: 1rem 0;
   scroll-padding: 1rem;
+  width: 100%;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-left: 0;
+  margin: 0;
 
   &::-webkit-scrollbar {
     display: none;
@@ -157,6 +181,8 @@
   border: 1px solid rgba(0, 138, 61, 0.1);
   position: relative;
   min-height: 450px;
+  max-width: 350px;
+  margin: 0;
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
@@ -167,17 +193,20 @@
   @media (max-width: 1024px) {
     flex: 0 0 calc(100% / 2 - 1rem);
     min-height: 400px;
+    max-width: 300px;
   }
 
   @media (max-width: 768px) {
     flex: 0 0 85%;
     margin: 0 auto;
     min-height: 380px;
+    max-width: 280px;
   }
 
   @media (max-width: 480px) {
     flex: 0 0 90%;
     min-height: 350px;
+    max-width: 260px;
   }
 }
 
@@ -324,7 +353,7 @@
   height: 50px;
   font-size: 1.2rem;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -341,6 +370,12 @@
     transform: translateY(-50%) scale(0.95);
   }
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   @media (max-width: 768px) {
     width: 40px;
     height: 40px;
@@ -355,26 +390,26 @@
 }
 
 .arrowLeft {
-  left: -25px;
+  left: 0;
 
   @media (max-width: 768px) {
-    left: -20px;
+    left: 0.5rem;
   }
 
   @media (max-width: 480px) {
-    left: -17px;
+    left: 0.25rem;
   }
 }
 
 .arrowRight {
-  right: -25px;
+  right: 0;
 
   @media (max-width: 768px) {
-    right: -20px;
+    right: 0.5rem;
   }
 
   @media (max-width: 480px) {
-    right: -17px;
+    right: 0.25rem;
   }
 }
 

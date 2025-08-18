@@ -27,14 +27,12 @@ export default function Reviews({ layout = 'slider' }: ReviewsProps) {
   const checkTextOverflow = () => {
     const newTextOverflows = textRefs.current.map((ref) => {
       if (!ref) return false;
-      // Verifica se o texto está sendo cortado (scrollHeight > clientHeight)
       return ref.scrollHeight > ref.clientHeight;
     });
     setTextOverflows(newTextOverflows);
   };
 
   useEffect(() => {
-    // Aguarda um pouco para garantir que o DOM foi renderizado
     const timer = setTimeout(() => {
       checkTextOverflow();
     }, 100);
