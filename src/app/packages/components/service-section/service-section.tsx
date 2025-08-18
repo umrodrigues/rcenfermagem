@@ -106,7 +106,7 @@ export default function ServiceSection({
               <FaPhone className={styles.buttonIcon} />
             </Link>
             
-            <Link href="https://wa.me/5511999999999" className={styles.whatsappButton}>
+            <Link href="https://api.whatsapp.com/send?phone=5505184163243" className={styles.whatsappButton}>
               <div className={styles.buttonContent}>
                 <span className={styles.buttonQuestion}>ATENDIMENTO RÁPIDO</span>
                 <span className={styles.buttonAction}>WHATSAPP</span>

@@ -24,10 +24,10 @@ export default function HeaderMobile() {
           
           <div className={styles.actions}>
             <div className={styles.socialLinks}>
-              <Link href="#" className={styles.socialLink} aria-label="Facebook">
+              <Link href="https://www.facebook.com/rcenfermagemparavoce" target="_blank" className={styles.socialLink} aria-label="Facebook">
                 <FaFacebookF />
               </Link>
-              <Link href="#" className={styles.socialLink} aria-label="Instagram">
+              <Link href="https://www.instagram.com/rcenfermagemparavoce" target="_blank" className={styles.socialLink} aria-label="Instagram">
                 <FaInstagram />
               </Link>
             </div>

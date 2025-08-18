@@ -44,21 +44,21 @@ export default function Contact() {
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>Telefone</h2>
               <div className={styles.phoneLinks}>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=5551984163243" 
+                <a
+                  href="https://api.whatsapp.com/send?phone=5505184163243"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
                 >
-                  (51) 98416.3243 - Lúcio
+                  51 8416-3243
                 </a>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=5551997822982" 
+                <a
+                  href="https://api.whatsapp.com/send?phone=5505184163243"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
                 >
-                  (51) 99782.2982 - Grasiele
+                  51 8416-3243
                 </a>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Contact() {
             </div>
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>Email</h2>
-              <a 
+              <a
                 href="mailto:contato@rcenfermagemparavoce.com.br"
                 className={styles.emailLink}
               >
