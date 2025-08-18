@@ -108,7 +108,7 @@
   color: inherit;
   border: 1px solid rgba(34, 197, 94, 0.1);
   position: relative;
-  min-height: 500px;
+  min-height: 600px;
   
   &::before {
     content: '';
@@ -130,18 +130,19 @@
 
 .imageWrapper {
   width: 100%;
-  height: 280px;
+  height: 350px;
   position: relative;
   overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover .image {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .imageGradient {
@@ -303,11 +304,11 @@
   
   .card {
     border-radius: 16px;
-    min-height: 450px;
+    min-height: 550px;
   }
   
   .imageWrapper {
-    height: 240px;
+    height: 300px;
   }
   
   .cardContent {
@@ -344,11 +345,11 @@
   
   .card {
     border-radius: 12px;
-    min-height: 400px;
+    min-height: 500px;
   }
   
   .imageWrapper {
-    height: 200px;
+    height: 250px;
   }
   
   .cardContent {
