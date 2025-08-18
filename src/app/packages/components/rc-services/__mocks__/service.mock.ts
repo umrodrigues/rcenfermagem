@@ -3,7 +3,7 @@ export const servicesMock = [
     id: 1,
     titulo: 'Consulta de Enfermagem',
     descricao: 'Acompanhamento individualizado com avaliação completa, orientações personalizadas e plano de cuidados exclusivo.',
-    imagem: '/images/fundo1.jpeg',
+    imagem: '/consenf.jpg',
     link: '/servicos/consulta-de-enfermagem',
   },
   {
@@ -24,7 +24,7 @@ export const servicesMock = [
     id: 4,
     titulo: 'Tratamento de Lesões',
     descricao: 'Especialidade em tratamento de lesões de difícil cicatrização com recursos modernos e eficazes.',
-    imagem: '/images/banner2.jpeg',
+    imagem: '/procenf.jpg',
     link: '/servicos/tratamento-de-lesoes',
   },
   {

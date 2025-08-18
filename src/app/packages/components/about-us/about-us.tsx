@@ -4,13 +4,18 @@ import Image from 'next/image';
 import styles from './AboutUs.module.scss';
 import Link from 'next/link';
 import { motion, useAnimation, Variants, Transition } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   FaHeartbeat,
   FaHandsHelping,
   FaMedkit,
   FaLightbulb,
   FaGraduationCap,
+  FaUserMd,
+  FaAward,
+  FaBook,
+  FaChevronLeft,
+  FaChevronRight,
 } from 'react-icons/fa';
 
 const transition: Transition = {
@@ -29,6 +34,13 @@ const scrollRevealVariants: Variants = {
 
 export default function AboutUs() {
   const controls = useAnimation();
+  const [currentGrasieleImage, setCurrentGrasieleImage] = useState(0);
+  const [currentLucioImage, setCurrentLucioImage] = useState(0);
+  const grasieleIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const lucioIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const grasieleImages = ['/grasi1.jpg', '/grasi2.jpg', '/grasi3.jpg'];
+  const lucioImages = ['/lucio1.jpg', '/lucio2.jpg'];
 
   useEffect(() => {
     function onScroll() {
@@ -47,6 +59,48 @@ export default function AboutUs() {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, [controls]);
+
+  // Carrossel automático para Grasiele
+  useEffect(() => {
+    grasieleIntervalRef.current = setInterval(() => {
+      setCurrentGrasieleImage((prev) => (prev + 1) % grasieleImages.length);
+    }, 4000);
+
+    return () => {
+      if (grasieleIntervalRef.current) {
+        clearInterval(grasieleIntervalRef.current);
+      }
+    };
+  }, []);
+
+  // Carrossel automático para Lucio
+  useEffect(() => {
+    lucioIntervalRef.current = setInterval(() => {
+      setCurrentLucioImage((prev) => (prev + 1) % lucioImages.length);
+    }, 3500);
+
+    return () => {
+      if (lucioIntervalRef.current) {
+        clearInterval(lucioIntervalRef.current);
+      }
+    };
+  }, []);
+
+  const nextGrasieleImage = () => {
+    setCurrentGrasieleImage((prev) => (prev + 1) % grasieleImages.length);
+  };
+
+  const prevGrasieleImage = () => {
+    setCurrentGrasieleImage((prev) => (prev - 1 + grasieleImages.length) % grasieleImages.length);
+  };
+
+  const nextLucioImage = () => {
+    setCurrentLucioImage((prev) => (prev + 1) % lucioImages.length);
+  };
+
+  const prevLucioImage = () => {
+    setCurrentLucioImage((prev) => (prev - 1 + lucioImages.length) % lucioImages.length);
+  };
 
   return (
     <main className={styles.container}>
@@ -78,6 +132,222 @@ export default function AboutUs() {
           </p>
         </motion.div>
       </section>
+
+      <motion.section
+        className={styles.team}
+        initial="hidden"
+        animate={controls}
+        variants={scrollRevealVariants}
+        data-scroll-reveal
+      >
+        <div className={styles.teamHeader}>
+          <h2>
+            <FaUserMd style={{ color: '#00b377', marginRight: 8 }} />
+            Nossa Equipe de Especialistas
+          </h2>
+          <p>
+            Conheça os sócios proprietários da RC Enfermagem, profissionais altamente qualificados e dedicados 
+            a oferecer o melhor em cuidados de saúde.
+          </p>
+        </div>
+
+        <div className={styles.teamMembers}>
+          <div className={styles.member}>
+            <div className={styles.memberImageSection}>
+              <div className={styles.imageCarousel}>
+                <div className={styles.carouselContainer}>
+                  {grasieleImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.carouselSlide} ${index === currentGrasieleImage ? styles.active : ''}`}
+                    >
+                      <Image
+                        src={image}
+                        alt={`Grasiele Costa Rodrigues - Imagem ${index + 1}`}
+                        width={400}
+                        height={500}
+                        className={styles.carouselImage}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button className={`${styles.carouselButton} ${styles.prevButton}`} onClick={prevGrasieleImage}>
+                  <FaChevronLeft />
+                </button>
+                <button className={`${styles.carouselButton} ${styles.nextButton}`} onClick={nextGrasieleImage}>
+                  <FaChevronRight />
+                </button>
+                <div className={styles.carouselIndicators}>
+                  {grasieleImages.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`${styles.indicator} ${index === currentGrasieleImage ? styles.active : ''}`}
+                      onClick={() => setCurrentGrasieleImage(index)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className={styles.memberInfo}>
+              <div className={styles.memberHeader}>
+                <h3>Grasiele Costa Rodrigues</h3>
+                <div className={styles.memberBadges}>
+                  <span className={styles.badge}>Enfermeira Dermatológica</span>
+                  <span className={styles.badge}>Sócia proprietária da RC EDUCAÇÃO EM SAÚDE</span>
+                </div>
+              </div>
+              
+              <div className={styles.credentials}>
+                <div className={styles.credentialSection}>
+                  <h4><FaAward style={{ color: '#008a3d', marginRight: 6 }} />Formação Acadêmica</h4>
+                  <ul>
+                    <li>Mestranda em enfermagem pela UFCSPA</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaBook style={{ color: '#008a3d', marginRight: 6 }} />Especializações</h4>
+                  <ul>
+                    <li>Especialista em urgência, emergência e trauma</li>
+                    <li>Especialista em auditoria em saúde</li>
+                    <li>Especialista em DRG (diagnosis related groups)</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaMedkit style={{ color: '#008a3d', marginRight: 6 }} />Habilitações</h4>
+                  <ul>
+                    <li>Habilitada em laserterapia no tratamento de feridas</li>
+                    <li>Habilitada em ozônioterapia aplicada aos tratamentos das disfunções sistêmicas, articulares e estéticas</li>
+                    <li>Habilitada na obtenção e uso de Matriz de Fibrina Leucoplaquetária Autóloga pela Fibrin Workshop</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaHandsHelping style={{ color: '#008a3d', marginRight: 6 }} />Atuação Profissional</h4>
+                  <ul>
+                    <li>Consultora em amamentação</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.member}>
+            <div className={styles.memberImageSection}>
+              <div className={styles.imageCarousel}>
+                <div className={styles.carouselContainer}>
+                  {lucioImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.carouselSlide} ${index === currentLucioImage ? styles.active : ''}`}
+                    >
+                      <Image
+                        src={image}
+                        alt={`Lucio Rodrigo Lucca de Camargo - Imagem ${index + 1}`}
+                        width={400}
+                        height={500}
+                        className={styles.carouselImage}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button className={`${styles.carouselButton} ${styles.prevButton}`} onClick={prevLucioImage}>
+                  <FaChevronLeft />
+                </button>
+                <button className={`${styles.carouselButton} ${styles.nextButton}`} onClick={nextLucioImage}>
+                  <FaChevronRight />
+                </button>
+                <div className={styles.carouselIndicators}>
+                  {lucioImages.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`${styles.indicator} ${index === currentLucioImage ? styles.active : ''}`}
+                      onClick={() => setCurrentLucioImage(index)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className={styles.memberInfo}>
+              <div className={styles.memberHeader}>
+                <h3>Lucio Rodrigo Lucca de Camargo</h3>
+                <div className={styles.memberBadges}>
+                  <span className={styles.badge}>Enfermeiro</span>
+                  <span className={styles.badge}>Sócio proprietário da RC Enfermagem</span>
+                </div>
+              </div>
+              
+              <div className={styles.credentials}>
+                <div className={styles.credentialSection}>
+                  <h4><FaAward style={{ color: '#008a3d', marginRight: 6 }} />Formação Acadêmica</h4>
+                  <ul>
+                    <li>Mestre em Reabilitação e Inclusão</li>
+                    <li>Cursando pós Graduação em Matriz de Fibrina Leucoplaquetária Autóloga</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaBook style={{ color: '#008a3d', marginRight: 6 }} />Especializações</h4>
+                  <ul>
+                    <li>Especialista em Auditoria em Saúde</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaMedkit style={{ color: '#008a3d', marginRight: 6 }} />Habilitações</h4>
+                  <ul>
+                    <li>Habilitado em Laserterapia no tratamento de feridas</li>
+                    <li>Habilitado em Ozonioterapia aplicada aos tratamentos das disfunções sistêmicas, articulares e estética</li>
+                    <li>Habilitado na obtenção e uso de Matriz de Fibrina Leucoplaquetária Autóloga pela Fibrin Workshop</li>
+                  </ul>
+                </div>
+
+                <div className={styles.credentialSection}>
+                  <h4><FaHandsHelping style={{ color: '#008a3d', marginRight: 6 }} />Atuação Profissional</h4>
+                  <ul>
+                    <li>Membro do DCEG (Departamento Cientifico de Enfermagem Gerontológica)-ABEN/RS</li>
+                    <li>Docente de curso técnico de enfermagem</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.memberTogether}>
+            <div className={styles.togetherImageSection}>
+              <div className={styles.togetherImageWrapper}>
+                <Image
+                  src="/grasilucio1.jpg"
+                  alt="Grasiele e Lucio - Sócios proprietários"
+                  width={500}
+                  height={400}
+                  className={styles.togetherImage}
+                />
+                <div className={styles.imageOverlay}>
+                  <div className={styles.overlayContent}>
+                    <h4>Juntos Fazemos a Diferença</h4>
+                    <p>Mais de 20 anos de experiência combinada</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.memberInfo}>
+              <h3>Juntos Fazemos a Diferença</h3>
+              <p>
+                Com mais de 20 anos de experiência combinada na área da saúde, Grasiele e Lucio uniram suas 
+                especialidades para criar a RC Enfermagem, uma empresa que alia conhecimento técnico, 
+                inovação e humanização no cuidado com os pacientes.
+              </p>
+              <p>
+                Nossa missão é transformar a forma como o cuidado é percebido, oferecendo serviços de 
+                excelência com foco na prevenção, tratamento e reabilitação, sempre com respeito à 
+                individualidade de cada paciente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       <motion.section
         className={styles.about}
