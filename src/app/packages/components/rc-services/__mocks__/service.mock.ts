@@ -10,7 +10,7 @@ export const servicesMock = [
     id: 2,
     titulo: 'Procedimentos de Enfermagem',
     descricao: 'Realizamos todos os procedimentos de enfermagem com segurança, ética e competência.',
-    imagem: '/images/fundo2.jpeg',
+    imagem: '/consultaenf2.jpg',
     link: '/servicos/procedimentos-de-enfermagem',
   },
   {
@@ -36,9 +36,23 @@ export const servicesMock = [
   },
   {
     id: 6,
+    titulo: 'Teleconsulta',
+    descricao: 'Consultas de enfermagem online com toda a comodidade e segurança, sem sair de casa.',
+    imagem: '/teleconsulta.jpg',
+    link: '/servicos/teleconsulta',
+  },
+  {
+    id: 7,
+    titulo: 'Atendimento Capilar',
+    descricao: 'Cuidados especializados para o couro cabeludo e cabelos, com tratamentos personalizados.',
+    imagem: '/atendimentocapilar.jpg',
+    link: '/servicos/atendimento-capilar',
+  },
+  {
+    id: 8,
     titulo: 'RC Educação',
     descricao: 'Cursos e treinamentos especializados em enfermagem com metodologia dinâmica e professores experientes.',
-    imagem: '/images/fundo2.jpeg',
+    imagem: '/cursosetreinamentos.jpg',
     link: '/servicos/rc-educacao',
   }
 ];
