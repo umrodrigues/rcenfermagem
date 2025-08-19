@@ -55,7 +55,7 @@ export default function AtendimentoCapilar() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/images/banner1.jpeg"
+              imageSrc="/atendimentocapilar.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

@@ -13,7 +13,7 @@ export const mockTitle = 'Laserterapia'
 
 export const mockText = `A laserterapia é uma técnica avançada e não invasiva que utiliza a energia luminosa do laser para promover a regeneração tecidual, acelerar a cicatrização e tratar diversos problemas de pele.
 
-Nossa equipe é especializada em laserterapia aplicada ao tratamento de feridas e lesões, utilizando equipamentos de última geração e protocolos cientificamente comprovados. O tratamento é personalizado para cada paciente, considerando o tipo de lesão, localização e características individuais.
+Nossa equipe é especializada em laserterapia aplicada ao tratamento de lesões, utilizando equipamentos de última geração e protocolos cientificamente comprovados. O tratamento é personalizado para cada paciente, considerando o tipo de lesão, localização e características individuais.
 
 A laserterapia oferece resultados eficazes no tratamento de úlceras venosas, úlceras por pressão, feridas cirúrgicas, queimaduras, lesões de difícil cicatrização e problemas dermatológicos. O procedimento é seguro, indolor e pode ser realizado no consultório ou no domicílio do paciente.`
 

@@ -53,7 +53,7 @@ export default function TratamentoDeLesoes() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/images/fundo1.jpeg"
+              imageSrc="/procenf.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

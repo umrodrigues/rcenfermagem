@@ -53,7 +53,7 @@ export default function AdministracaoDeMedicamentos() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/images/fundo1.jpeg"
+              imageSrc="/images/banner1.jpeg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

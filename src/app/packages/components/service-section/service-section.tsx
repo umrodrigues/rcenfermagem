@@ -46,11 +46,18 @@ export default function ServiceSection({
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                width={600}
-                height={400}
+                fill
                 className={styles.image}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 priority
               />
+              <div className={styles.imageOverlay}>
+                <div className={styles.overlayContent}>
+                  <span className={styles.viewMore}>Ver detalhes</span>
+                  <FaHeartbeat className={styles.overlayIcon} />
+                </div>
+              </div>
+              <div className={styles.imageGradient}></div>
             </div>
           </div>
 
