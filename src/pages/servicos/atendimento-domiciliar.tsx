@@ -53,7 +53,7 @@ export default function AtendimentoDomiciliar() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/atenddomici.jpg"
+              imageSrc="/images/services/atenddomici.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

@@ -9,7 +9,7 @@ export default function ConsultorioSection() {
       <div className={styles.container}>
         <div className={styles.imageArea}>
           <Image
-            src="/images/fundo1.jpeg"
+            src="/images/backgrounds/fundo1.jpeg"
             alt="Equipe RC Enfermagem"
             width={600}
             height={600}

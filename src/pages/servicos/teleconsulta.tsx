@@ -55,7 +55,7 @@ export default function Teleconsulta() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/teleconsulta.jpg"
+              imageSrc="/images/services/teleconsulta.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

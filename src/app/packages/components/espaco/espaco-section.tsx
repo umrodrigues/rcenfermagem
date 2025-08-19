@@ -9,7 +9,7 @@ export default function EspacoSection() {
       <div className={styles.container}>
         <div className={styles.imageArea}>
           <Image
-            src="/images/fundo2.jpeg"
+            src="/images/backgrounds/fundo2.jpeg"
             alt="Imagem do espaço da clínica"
             width={800}
             height={600}

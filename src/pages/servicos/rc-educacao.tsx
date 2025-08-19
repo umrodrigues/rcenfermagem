@@ -54,7 +54,7 @@ export default function RcEducacao() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/cursosetreinamentos.jpg"
+              imageSrc="/images/services/cursosetreinamentos.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

@@ -39,8 +39,8 @@ export default function AboutUs() {
   const grasieleIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const lucioIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const grasieleImages = ['/grasi1.jpg', '/grasi2.jpg', '/grasi3.jpg'];
-  const lucioImages = ['/lucio1.jpg', '/lucio2.jpg'];
+  const grasieleImages = ['/images/team/grasi1.jpg', '/images/services/grasi2.jpg', '/images/team/grasi3.jpg'];
+  const lucioImages = ['/images/team/lucio1.jpg', '/images/team/lucio2.jpg'];
 
   useEffect(() => {
     function onScroll() {
@@ -106,7 +106,7 @@ export default function AboutUs() {
     <main className={styles.container}>
       <section className={styles.hero}>
         <Image
-          src="/images/fundo1.jpeg"
+                          src="/images/backgrounds/fundo1.jpeg"
           alt="Imagem de fundo sobre cuidado e enfermagem"
           fill
           className={styles.backgroundImage}
@@ -318,7 +318,7 @@ export default function AboutUs() {
             <div className={styles.togetherImageSection}>
               <div className={styles.togetherImageWrapper}>
                 <Image
-                  src="/grasilucio1.jpg"
+                  src="/images/team/grasilucio1.jpg"
                   alt="Grasiele e Lucio - Sócios proprietários"
                   width={500}
                   height={400}

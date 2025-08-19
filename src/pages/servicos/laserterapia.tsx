@@ -59,7 +59,7 @@ export default function Laserterapia() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/grasi2.jpg"
+              imageSrc="/images/services/grasi2.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />
