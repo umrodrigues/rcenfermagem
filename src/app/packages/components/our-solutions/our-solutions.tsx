@@ -16,7 +16,7 @@ export default function OurSolutions() {
   // Calcular quantos cards são visíveis na tela
   const getVisibleCardsCount = () => {
     if (isMobile) return 1;
-    if (window.innerWidth <= 1024) return 2;
+    if (typeof window !== 'undefined' && window.innerWidth <= 1024) return 2;
     return 3;
   };
 
@@ -28,17 +28,20 @@ export default function OurSolutions() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth <= 768);
+      }
     };
     
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }
   }, []);
 
   const scrollToIndex = useCallback((index: number) => {
-    if (carouselRef.current) {
+    if (carouselRef.current && typeof window !== 'undefined') {
       const card = carouselRef.current.querySelector(`.${styles.card}`);
       const cardWidth = card?.clientWidth || 0;
       const gap = window.innerWidth <= 768 ? 24 : 32;
@@ -52,7 +55,7 @@ export default function OurSolutions() {
   }, []);
 
   const scroll = useCallback((direction: 'left' | 'right') => {
-    if (carouselRef.current && !isScrolling) {
+    if (carouselRef.current && !isScrolling && typeof window !== 'undefined') {
       setIsScrolling(true);
       const card = carouselRef.current.querySelector(`.${styles.card}`);
       const cardWidth = card?.clientWidth || 0;
@@ -71,7 +74,6 @@ export default function OurSolutions() {
             behavior: 'smooth',
           });
         } else {
-          // Volta ao início quando chegar ao final
           scrollToIndex(0);
         }
       }
@@ -81,7 +83,7 @@ export default function OurSolutions() {
   }, [isScrolling, currentIndex, scrollToIndex]);
 
   const handleScroll = useCallback(() => {
-    if (carouselRef.current) {
+    if (carouselRef.current && typeof window !== 'undefined') {
       const scrollLeft = carouselRef.current.scrollLeft;
       const card = carouselRef.current.querySelector(`.${styles.card}`);
       const cardWidth = card?.clientWidth || 0;

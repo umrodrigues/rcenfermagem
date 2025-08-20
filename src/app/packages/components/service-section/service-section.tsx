@@ -1,128 +1,138 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
+import { useEffect } from 'react'
+import Head from 'next/head'
 import styles from './ServiceSection.module.scss'
-import { FaHeartbeat, FaCheckCircle, FaPhone, FaWhatsapp } from 'react-icons/fa'
+import { FaCheckCircle, FaStar, FaHeartbeat } from 'react-icons/fa'
 
-type ServiceSectionProps = {
+interface ServiceSectionProps {
   title: string
   text: string
   imageSrc: string
-  imageAlt?: string
-  features?: string[]
-  benefits?: string[]
+  features: string[]
+  benefits: string[]
+  metaTitle?: string
+  metaDescription?: string
+  metaKeywords?: string[]
 }
 
-export default function ServiceSection({ 
-  title, 
-  text, 
-  imageSrc, 
-  imageAlt = 'Imagem do serviço',
-  features = [],
-  benefits = []
+export default function ServiceSection({
+  title,
+  text,
+  imageSrc,
+  features,
+  benefits,
+  metaTitle,
+  metaDescription,
+  metaKeywords = []
 }: ServiceSectionProps) {
-  const renderText = (text: string) => {
-    return text.split('\n').map((line, index) => (
-      <p key={index} style={{ marginBottom: line.trim() === '' ? '1rem' : '0.5rem' }}>
-        {line}
-      </p>
-    ));
-  };
+  
+  const defaultMetaTitle = `${title} - RC Enfermagem Para Você | Serviços Especializados em Enfermagem`
+  const defaultMetaDescription = `${text} Oferecemos ${title.toLowerCase()} com qualidade, segurança e humanização. Atendimento em Porto Alegre e região.`
+  const defaultKeywords = [
+    title.toLowerCase(),
+    'enfermagem',
+    'saúde',
+    'Porto Alegre',
+    'RC Enfermagem Para Você',
+    ...metaKeywords
+  ]
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.title = metaTitle || defaultMetaTitle
+      
+      const metaDescriptionEl = document.querySelector('meta[name="description"]')
+      if (metaDescriptionEl) {
+        metaDescriptionEl.setAttribute('content', metaDescription || defaultMetaDescription)
+      }
+      
+      const metaKeywordsEl = document.querySelector('meta[name="keywords"]')
+      if (metaKeywordsEl) {
+        metaKeywordsEl.setAttribute('content', defaultKeywords.join(', '))
+      }
+      
+      const canonicalEl = document.querySelector('link[rel="canonical"]')
+      if (canonicalEl) {
+        canonicalEl.setAttribute('href', `https://rcenfermagemparavoce.com.br/servicos/${title.toLowerCase().replace(/\s+/g, '-')}`)
+      }
+    }
+  }, [title, metaTitle, metaDescription, defaultMetaDescription, defaultKeywords])
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.titleContainer}>
-            <FaHeartbeat className={styles.titleIcon} />
-            <h1 className={styles.title}>{title}</h1>
-          </div>
-        </div>
+    <>
+      <Head>
+        <title>{metaTitle || defaultMetaTitle}</title>
+        <meta name="description" content={metaDescription || defaultMetaDescription} />
+        <meta name="keywords" content={defaultKeywords.join(', ')} />
+        <link rel="canonical" href={`https://rcenfermagemparavoce.com.br/servicos/${title.toLowerCase().replace(/\s+/g, '-')}`} />
+        
+        <meta property="og:title" content={metaTitle || defaultMetaTitle} />
+        <meta property="og:description" content={metaDescription || defaultMetaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://rcenfermagemparavoce.com.br/servicos/${title.toLowerCase().replace(/\s+/g, '-')}`} />
+        <meta property="og:image" content={imageSrc} />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle || defaultMetaTitle} />
+        <meta name="twitter:description" content={metaDescription || defaultMetaDescription} />
+        <meta name="twitter:image" content={imageSrc} />
+      </Head>
 
-        <div className={styles.contentGrid}>
-          <div className={styles.imageSection}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                fill
-                className={styles.image}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                priority
-              />
-              <div className={styles.imageOverlay}>
-                <div className={styles.overlayContent}>
-                  <span className={styles.viewMore}>Ver detalhes</span>
-                  <FaHeartbeat className={styles.overlayIcon} />
-                </div>
+      <section className={styles.serviceSection}>
+        <div className={styles.container}>
+          <div className={styles.header}>
+            <div className={styles.titleContainer}>
+              <FaHeartbeat className={styles.titleIcon} />
+              <h1 className={styles.title}>{title}</h1>
+            </div>
+            <p className={styles.subtitle}>{text}</p>
+          </div>
+
+          <div className={styles.content}>
+            <div className={styles.imageSection}>
+              <div className={styles.imageWrapper}>
+                <img
+                  src={imageSrc}
+                  alt={`${title} - RC Enfermagem`}
+                  className={styles.image}
+                  loading="lazy"
+                />
               </div>
-              <div className={styles.imageGradient}></div>
-            </div>
-          </div>
-
-          <div className={styles.textSection}>
-            <div className={styles.description}>
-              {renderText(text)}
             </div>
 
-            {features.length > 0 && (
-              <div className={styles.features}>
-                <h3 className={styles.featuresTitle}>O que incluímos:</h3>
+            <div className={styles.infoSection}>
+              <div className={styles.featuresSection}>
+                <h2 className={styles.sectionTitle}>
+                  <FaCheckCircle className={styles.sectionIcon} />
+                  O que oferecemos
+                </h2>
                 <ul className={styles.featuresList}>
                   {features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
-                      <FaCheckCircle className={styles.checkIcon} />
-                      <span>{feature}</span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
               </div>
-            )}
 
-            {benefits.length > 0 && (
-              <div className={styles.benefits}>
-                <h3 className={styles.benefitsTitle}>Benefícios:</h3>
+              <div className={styles.benefitsSection}>
+                <h2 className={styles.sectionTitle}>
+                  <FaStar className={styles.sectionIcon} />
+                  Benefícios
+                </h2>
                 <ul className={styles.benefitsList}>
                   {benefits.map((benefit, index) => (
                     <li key={index} className={styles.benefitItem}>
-                      <FaHeartbeat className={styles.benefitIcon} />
-                      <span>{benefit}</span>
+                      {benefit}
                     </li>
                   ))}
                 </ul>
               </div>
-            )}
+            </div>
           </div>
         </div>
-
-        <div className={styles.contactSection}>
-          <div className={styles.contactInfo}>
-            <h3 className={styles.contactTitle}>Interessado neste serviço?</h3>
-            <p className={styles.contactDescription}>
-              Entre em contato conosco e descubra como podemos ajudar você
-            </p>
-          </div>
-          
-          <div className={styles.contactButtons}>
-            <Link href="/contato" className={styles.contactButton}>
-              <div className={styles.buttonContent}>
-                <span className={styles.buttonQuestion}>TEM INTERESSE?</span>
-                <span className={styles.buttonAction}>FALE CONOSCO</span>
-              </div>
-              <FaPhone className={styles.buttonIcon} />
-            </Link>
-            
-            <Link href="https://api.whatsapp.com/send?phone=5505184163243" className={styles.whatsappButton}>
-              <div className={styles.buttonContent}>
-                <span className={styles.buttonQuestion}>ATENDIMENTO RÁPIDO</span>
-                <span className={styles.buttonAction}>WHATSAPP</span>
-              </div>
-              <FaWhatsapp className={styles.buttonIcon} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
