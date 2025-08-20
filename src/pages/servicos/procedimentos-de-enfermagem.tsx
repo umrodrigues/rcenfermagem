@@ -50,7 +50,7 @@ export default function ProcedimentosDeEnfermagem() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/images/services/consultaenf2.jpg"
+              imageSrc="/images/services/procenfatual.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

@@ -10,7 +10,7 @@ export const servicesMock = [
     id: 2,
     titulo: 'Procedimentos de Enfermagem',
     descricao: 'Realizamos todos os procedimentos de enfermagem com segurança, ética e competência.',
-    imagem: '/images/services/consultaenf2.jpg',
+    imagem: '/images/services/procenfatual.jpg',
     link: '/servicos/procedimentos-de-enfermagem',
   },
   {
