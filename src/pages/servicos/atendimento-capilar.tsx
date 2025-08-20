@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Atendimento Capilar'
 
-export const mockText = `O atendimento capilar especializado oferece cuidados personalizados para o couro cabeludo e cabelos, com foco na saúde e bem-estar capilar.
-
-Nossos profissionais especializados realizam avaliação completa do couro cabeludo, identificam problemas específicos e desenvolvem tratamentos personalizados para cada caso. Utilizamos técnicas avançadas e produtos de qualidade para garantir resultados eficazes.
-
-Nosso atendimento inclui avaliação dermatológica do couro cabeludo, identificação de problemas como queda de cabelo, caspa, seborreia, tratamento de lesões capilares, orientações sobre cuidados diários e acompanhamento contínuo para manutenção dos resultados.`
+export const mockText = `Cuidados especializados para couro cabeludo e cabelos com tratamentos personalizados.`
 
 export const mockFeatures = [
   'Avaliação dermatológica completa do couro cabeludo',

@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Teleconsulta'
 
-export const mockText = `A teleconsulta de enfermagem é uma modalidade inovadora que permite o atendimento remoto com toda a qualidade e profissionalismo dos nossos serviços.
-
-Oferecemos consultas online com avaliação completa, orientações personalizadas e acompanhamento contínuo, proporcionando comodidade e segurança sem sair de casa. Utilizamos tecnologia avançada para garantir uma experiência de atendimento excepcional.
-
-Nossa teleconsulta inclui avaliação inicial, orientações sobre cuidados de saúde, monitoramento de sinais vitais quando necessário, prescrição de cuidados e acompanhamento contínuo através de plataformas seguras e confiáveis.`
+export const mockText = `Atendimento remoto com qualidade e profissionalismo através de tecnologia avançada.`
 
 export const mockFeatures = [
   'Avaliação inicial completa via videoconferência',

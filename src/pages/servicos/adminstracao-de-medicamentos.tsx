@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Administração de Medicamentos'
 
-export const mockText = `Realizamos a administração segura e responsável de medicamentos por via oral, injetável, subcutânea, intravenosa e outras, sempre com acompanhamento profissional habilitado.
-
-Nossos serviços incluem administração de medicamentos por via oral, injeções intramusculares e subcutâneas, administração intravenosa, monitoramento de reações adversas, orientação sobre horários e dosagens, acompanhamento da eficácia do tratamento e registro detalhado de todas as administrações.
-
-Seguimos rigorosamente a prescrição médica e protocolos atualizados, garantindo cuidado, precisão e tranquilidade para paciente e família, no conforto do seu lar ou consultório.`
+export const mockText = `Administração segura de medicamentos com acompanhamento profissional especializado.`
 
 export const mockFeatures = [
   'Administração de medicamentos por via oral',

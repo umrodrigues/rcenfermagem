@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'RC Educação: Ciência, Prática e Excelência em Cada Aula'
 
-export const mockText = `Acreditamos que o conhecimento transforma. Por isso, unimos ciência, inovação e prática para formar profissionais capacitados, confiantes e preparados para atuar com excelência.
-
-Oferecemos os melhores cursos da região, com metodologia dinâmica e professores experientes, referência em empreendedorismo. Nossos cursos incluem Feridas Sob Controle, Coberturas e Desbridamento, Terapia por Pressão Negativa, Sutura para Enfermeiros, Tapping na Prática, Laserpuntura e Laserterapia e LED na Prevenção e Tratamento de Lesões.
-
-No RC Educação, o estudo é contínuo e a evolução certa. Invista em você, na ciência e seja referência no que faz.`
+export const mockText = `Formação especializada em enfermagem com metodologia dinâmica e professores experientes.`
 
 export const mockFeatures = [
   'Feridas Sob Controle: da Avaliação ao Tratamento',

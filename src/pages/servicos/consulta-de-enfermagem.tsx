@@ -12,11 +12,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Consulta de Enfermagem'
 
-export const mockText = `A consulta de enfermagem é um processo sistemático de avaliação, diagnóstico, planejamento, implementação e avaliação dos cuidados prestados ao paciente.
-
-Oferecemos acompanhamento individualizado com avaliação completa, orientações personalizadas e plano de cuidados exclusivo. Atuamos com foco na prevenção, promoção da saúde, bem-estar e reabilitação.
-
-Nossa consulta inclui uma avaliação completa do estado de saúde, orientações personalizadas baseadas nas necessidades individuais e um plano de cuidados exclusivo e detalhado.`
+export const mockText = `Avaliação completa e personalizada com foco na prevenção, promoção da saúde e bem-estar.`
 
 export const mockFeatures = [
   'Avaliação completa do estado de saúde',

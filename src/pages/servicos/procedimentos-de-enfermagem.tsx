@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Procedimentos de Enfermagem'
 
-export const mockText = `Realizamos todos os procedimentos de enfermagem que são de responsabilidade técnica e legal do enfermeiro, com segurança, ética e competência.
-
-Nossos procedimentos incluem sondagens nasoenteral e nasogástrica, sondagem vesical de alívio e de demora, retirada de pontos, salinização de cateter PICC, troca de curativos de acesso venoso central, administração de medicamentos por via oral, injetável, subcutânea, intravenosa e outras, curativos especiais e tratamento de lesões, monitoramento de sinais vitais e coleta de exames laboratoriais.
-
-Cada procedimento é executado com técnica apurada, cuidado individualizado e seguindo rigorosamente os protocolos atualizados, garantindo conforto, segurança e tranquilidade ao paciente.`
+export const mockText = `Procedimentos técnicos especializados com segurança e protocolos atualizados.`
 
 export const mockFeatures = [
   'Sondagens nasoenteral e nasogástrica',

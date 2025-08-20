@@ -11,11 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'Tratamento de Lesões de Difícil Cicatrização'
 
-export const mockText = `Essa é nossa especialidade! Oferecemos recursos modernos e eficazes para o tratamento de diferentes tipos de lesões, promovendo recuperação mais rápida, segura e melhores resultados clínicos.
-
-Utilizamos avaliação clínica criteriosa e prescrição dos melhores protocolos, incluindo laserterapia, ozonioterapia, aplicação de matriz de fibrina, curativo a vácuo (terapia por pressão negativa), bota de Unna e coberturas tecnológicas.
-
-Cada procedimento é executado com técnica apurada, cuidado individualizado e seguindo rigorosamente os protocolos atualizados, garantindo conforto, segurança e tranquilidade ao paciente.`
+export const mockText = `Tratamento especializado de lesões com recursos modernos e protocolos eficazes.`
 
 export const mockFeatures = [
   'Laserterapia: estimula regeneração celular e acelera cicatrização',
