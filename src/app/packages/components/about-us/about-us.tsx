@@ -192,7 +192,6 @@ export default function AboutUs() {
               <div className={styles.memberHeader}>
                 <h3>Grasiele Costa Rodrigues</h3>
                 <div className={styles.memberBadges}>
-                  <span className={styles.badge}>Enfermeira Dermatológica</span>
                   <span className={styles.badge}>Sócia proprietária da RC EDUCAÇÃO EM SAÚDE</span>
                 </div>
               </div>
@@ -211,6 +210,7 @@ export default function AboutUs() {
                     <li>Especialista em urgência, emergência e trauma</li>
                     <li>Especialista em auditoria em saúde</li>
                     <li>Especialista em DRG (diagnosis related groups)</li>
+                    <li>Enfermeira Dermatológica</li>
                   </ul>
                 </div>
 
@@ -335,8 +335,9 @@ export default function AboutUs() {
             <div className={styles.memberInfo}>
               <h3>Juntos Fazemos a Diferença</h3>
               <p>
-                Com mais de 20 anos de experiência combinada na área da saúde, Grasiele e Lucio uniram suas 
-                especialidades para criar a RC Enfermagem, uma empresa que alia conhecimento técnico, 
+                A RC Enfermagem foi criada em 2019 através da necessidade de dois sócios sonhadores com a enfermagem 
+                empreendedora. Com mais de 20 anos de experiência combinada na área da saúde, Grasiele e Lucio uniram suas 
+                especialidades para criar uma empresa que alia conhecimento técnico, 
                 inovação e humanização no cuidado com os pacientes.
               </p>
               <p>
