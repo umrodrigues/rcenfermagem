@@ -13,6 +13,19 @@ export default function OurSolutions() {
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  // Calcular quantos cards são visíveis na tela
+  const getVisibleCardsCount = () => {
+    if (isMobile) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  };
+
+  // Calcular o número total de páginas baseado nos cards visíveis
+  const getTotalPages = () => {
+    const visibleCards = getVisibleCardsCount();
+    return Math.ceil(servicesMock.length / visibleCards);
+  };
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -46,14 +59,26 @@ export default function OurSolutions() {
       const gap = window.innerWidth <= 768 ? 24 : 32;
       const scrollAmount = cardWidth + gap;
       
-      carouselRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
+      if (direction === 'left' && currentIndex > 0) {
+        carouselRef.current.scrollBy({
+          left: -scrollAmount,
+          behavior: 'smooth',
+        });
+      } else if (direction === 'right') {
+        if (currentIndex < getTotalPages() - 1) {
+          carouselRef.current.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          });
+        } else {
+          // Volta ao início quando chegar ao final
+          scrollToIndex(0);
+        }
+      }
 
       setTimeout(() => setIsScrolling(false), 500);
     }
-  }, [isScrolling]);
+  }, [isScrolling, currentIndex, scrollToIndex]);
 
   const handleScroll = useCallback(() => {
     if (carouselRef.current) {
@@ -77,8 +102,13 @@ export default function OurSolutions() {
   useEffect(() => {
     if (!isMobile && !isScrolling) {
       const interval = setInterval(() => {
-        const nextIndex = (currentIndex + 1) % servicesMock.length;
-        scrollToIndex(nextIndex);
+        if (currentIndex < getTotalPages() - 1) {
+          const nextIndex = currentIndex + 1;
+          scrollToIndex(nextIndex);
+        } else {
+          // Volta ao início quando chegar ao final
+          scrollToIndex(0);
+        }
       }, 5000);
       
       return () => clearInterval(interval);
@@ -91,6 +121,8 @@ export default function OurSolutions() {
       carouselRef.current.scrollLeft = 0;
     }
   }, []);
+
+  const totalPages = getTotalPages();
 
   return (
     <section className={styles.section}>
@@ -148,7 +180,7 @@ export default function OurSolutions() {
               className={`${styles.arrow} ${styles.arrowRight}`} 
               onClick={() => scroll('right')}
               aria-label="Próximo"
-              disabled={isScrolling || currentIndex === servicesMock.length - 1}
+              disabled={isScrolling}
             >
               <FaArrowRight />
             </button>
@@ -156,7 +188,7 @@ export default function OurSolutions() {
         </div>
 
         <div className={styles.indicators}>
-          {servicesMock.map((_, index) => (
+          {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
               className={`${styles.indicator} ${index === currentIndex ? styles.active : ''}`}
