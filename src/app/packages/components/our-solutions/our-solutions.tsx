@@ -155,18 +155,16 @@ export default function OurSolutions() {
           )}
         </div>
 
-        {!isMobile && (
-          <div className={styles.indicators}>
-            {servicesMock.map((_, index) => (
-              <button
-                key={index}
-                className={`${styles.indicator} ${index === currentIndex ? styles.active : ''}`}
-                onClick={() => scrollToIndex(index)}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
+        <div className={styles.indicators}>
+          {servicesMock.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.indicator} ${index === currentIndex ? styles.active : ''}`}
+              onClick={() => scrollToIndex(index)}
+              aria-label={`Ir para slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
