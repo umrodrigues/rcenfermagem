@@ -48,7 +48,7 @@ export default function ConsultaDeEnfermagem() {
              <ServiceSection
               title={mockTitle}
               text={mockText}
-              imageSrc="/images/services/consenf.jpg"
+              imageSrc="/images/services/consultaenf2.jpg"
               features={mockFeatures}
               benefits={mockBenefits}
             />

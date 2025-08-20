@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   authors: [{ name: "RC Enfermagem" }],
   creator: "RC Enfermagem",
   publisher: "RC Enfermagem",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
   formatDetection: {
     email: false,
     address: false,

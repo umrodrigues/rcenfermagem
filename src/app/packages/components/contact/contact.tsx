@@ -50,15 +50,15 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
                 >
-                  51 8416-3243
-                </a>
+                  51 8416-3243 - Lucio
+                </a> 
                 <a
-                  href="https://api.whatsapp.com/send?phone=5505184163243"
+                  href="https://api.whatsapp.com/send?phone=5505197822982"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
                 >
-                  51 8416-3243
+                  51 9782-2982 - Grasi
                 </a>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function Contact() {
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>Atendimento</h2>
               <p className={styles.cardText}>
-                Seg. a Sex., das 08h às 18h
+                Das 08h às 18h e plantões finais de semana
               </p>
             </div>
           </div>

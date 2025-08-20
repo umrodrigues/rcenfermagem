@@ -31,7 +31,7 @@ export const servicesMock = [
     id: 5,
     titulo: 'Atendimento Domiciliar',
     descricao: 'Cuidados especializados no conforto do seu lar, com toda a segurança e profissionalismo.',
-    imagem: '/images/services/atenddomici.jpg',
+    imagem: '/images/services/medpordomici.jpg',
     link: '/servicos/atendimento-domiciliar',
   },
   {

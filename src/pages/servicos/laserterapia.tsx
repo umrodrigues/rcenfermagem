@@ -16,14 +16,14 @@ export const mockText = `Técnica avançada com laser para regeneração tecidua
 export const mockFeatures = [
   'Avaliação completa da lesão antes do tratamento',
   'Protocolos personalizados baseados no tipo de lesão',
-  'Aplicação de laser de baixa intensidade (LLLT)',
+  'Aplicação de laser de baixa intensidade',
   'Tratamento de úlceras venosas e por pressão',
-  'Aceleração da cicatrização de feridas cirúrgicas',
-  'Tratamento de queimaduras e lesões térmicas',
+  'Tratamento de queimaduras',
   'Terapia para lesões de difícil cicatrização',
   'Acompanhamento contínuo dos resultados',
   'Documentação fotográfica do progresso',
-  'Orientações sobre cuidados pós-tratamento'
+  'Orientações sobre cuidados pós-tratamento',
+  'Tratamento de lesão por pressão'
 ]
 
 export const mockBenefits = [
