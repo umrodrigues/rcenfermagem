@@ -3,7 +3,7 @@ export const servicesMock = [
     id: 1,
     titulo: 'Consulta de Enfermagem',
     descricao: 'Acompanhamento individualizado com avaliação completa, orientações personalizadas e plano de cuidados exclusivo.',
-    imagem: '/images/services/consenf.jpg',
+    imagem: '/images/services/consultaenf2.jpg',
     link: '/servicos/consulta-de-enfermagem',
   },
   {
