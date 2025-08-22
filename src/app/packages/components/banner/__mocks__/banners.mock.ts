@@ -1,6 +1,6 @@
 export const bannerDataMock = [
   {
-    image: '/banner/banner1.jpeg',
+    image: '/banner/banner1.jpg',
     title: 'RC Enfermagem',
     subtitle: 'Bem-vindo a',
     description: 'Para você um espaço de acolhimento e humanização nos cuidados em saúde',

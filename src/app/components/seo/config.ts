@@ -14,7 +14,7 @@ export const SEO_CONFIG = {
       'Porto Alegre',
       'laserterapia',
       'tratamento de lesões',
-      'administração de medicamentos',
+
       'atendimento capilar',
       'RC educação',
       'ozonioterapia',
