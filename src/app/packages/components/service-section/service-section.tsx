@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from './ServiceSection.module.scss'
 import { FaCheckCircle, FaStar, FaHeartbeat } from 'react-icons/fa'
@@ -26,6 +26,35 @@ export default function ServiceSection({
   metaDescription,
   metaKeywords = []
 }: ServiceSectionProps) {
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  const isTratamentoLesoes = title.toLowerCase().includes('tratamento de lesões')
+  const isRcEducacao = title.toLowerCase().includes('rc educação')
+  
+  const tratamentoLesoesImages = [
+    '/images/services/procenf.jpg',
+    '/images/services/tratlesao1.jpg',
+    '/images/services/tratlesao2.jpg'
+  ]
+  
+  const rcEducacaoImages = [
+    '/images/services/cursosetreinamentos.jpg',
+    '/images/services/rceduc1.jpg',
+    '/images/services/rceduc2.jpg'
+  ]
+  
+  const carouselImages = isTratamentoLesoes ? tratamentoLesoesImages : 
+                        isRcEducacao ? rcEducacaoImages : [imageSrc]
+
+  useEffect(() => {
+    if (isTratamentoLesoes || isRcEducacao) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
+      }, 5000)
+      return () => clearInterval(interval)
+    }
+  }, [isTratamentoLesoes, isRcEducacao, carouselImages.length])
   
   const defaultMetaTitle = `${title} - RC Enfermagem Para Você | Serviços Especializados em Enfermagem`
   const defaultMetaDescription = `${text} Oferecemos ${title.toLowerCase()} com qualidade, segurança e humanização. Atendimento em Porto Alegre e região.`
@@ -92,12 +121,35 @@ export default function ServiceSection({
           <div className={styles.content}>
             <div className={styles.imageSection}>
               <div className={styles.imageWrapper}>
-                <img
-                  src={imageSrc}
-                  alt={`${title} - RC Enfermagem`}
-                  className={styles.image}
-                  loading="lazy"
-                />
+                {(isTratamentoLesoes || isRcEducacao) ? (
+                  <>
+                    {carouselImages.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${title} - Imagem ${index + 1}`}
+                        className={`${styles.image} ${index === currentImageIndex ? styles.imageVisible : ''}`}
+                        loading="lazy"
+                      />
+                    ))}
+                    <div className={styles.imageIndicators}>
+                      {carouselImages.map((_, index) => (
+                        <button
+                          key={index}
+                          className={`${styles.indicator} ${currentImageIndex === index ? styles.active : ''}`}
+                          onClick={() => setCurrentImageIndex(index)}
+                        />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={imageSrc}
+                    alt={`${title} - RC Enfermagem`}
+                    className={`${styles.image} ${styles.imageVisible}`}
+                    loading="lazy"
+                  />
+                )}
               </div>
             </div>
 

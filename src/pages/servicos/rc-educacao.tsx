@@ -11,7 +11,7 @@ import ServiceSection from '@/app/packages/components/service-section/service-se
 
 export const mockTitle = 'RC Educação: Ciência, Prática e Excelência em Cada Aula'
 
-export const mockText = `Formação especializada em enfermagem com metodologia dinâmica e professores experientes.`
+export const mockText = `Formação especializada em enfermagem com metodologia dinâmica e professores experientes. A RC educação surgiu pela necessidade de compartilhar conhecimento e promover a autonomia de novos empreendedores! Estamos desde 2022 e já são mais de mil alunos, entre eles grandes instituições como hospital moinhos de vento e Unimed Porto Alegre.`
 
 export const mockFeatures = [
   'Feridas Sob Controle: da Avaliação ao Tratamento',

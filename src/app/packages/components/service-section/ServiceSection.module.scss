@@ -110,6 +110,8 @@ $text: #333;
   order: 1;
 }
 
+
+
 .imageWrapper {
   width: 100%;
   height: 650px;
@@ -146,23 +148,67 @@ $text: #333;
   }
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  z-index: 0;
+  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  &.imageVisible {
+    opacity: 1;
+  }
 }
 
-.imageWrapper:hover .image {
-  transform: scale(1.05);
+.imageIndicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    bottom: 15px;
+    gap: 6px;
+  }
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 10px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background: $green;
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(1, 133, 58, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .imageGradient {

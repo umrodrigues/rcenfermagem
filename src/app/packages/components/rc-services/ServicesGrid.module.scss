@@ -135,14 +135,52 @@
   overflow: hidden;
 }
 
+
+
 .image {
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  &.imageVisible {
+    opacity: 1;
+  }
 }
 
-.card:hover .image {
-  transform: scale(1.05);
+.imageIndicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background: #22c55e;
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+  }
 }
 
 .imageGradient {
