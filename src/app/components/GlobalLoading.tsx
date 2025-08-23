@@ -5,12 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ParticleBackground } from './ParticleBackground'
 import { WaveEffect } from './WaveEffect'
 import { AnimatedText } from './AnimatedText'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export function GlobalLoading() {
   const { isLoading } = useLoadingStore()
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     if (isLoading) {
       document.body.classList.add('loading')
     } else {
@@ -20,7 +27,11 @@ export function GlobalLoading() {
     return () => {
       document.body.classList.remove('loading')
     }
-  }, [isLoading])
+  }, [isLoading, isClient])
+
+  if (!isClient) {
+    return null
+  }
 
   return (
     <AnimatePresence mode="wait">

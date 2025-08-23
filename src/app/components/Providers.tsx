@@ -1,15 +1,22 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { GlobalLoading } from './GlobalLoading'
 import { useLoading } from '../hooks/useLoading'
 import { useLoadingStore } from '../stores/loadingStore'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const { setLoading } = useLoadingStore()
+  const [isClient, setIsClient] = useState(false)
   useLoading()
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false)
@@ -22,12 +29,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
     } else {
       handleLoad()
     }
-  }, [setLoading])
+  }, [setLoading, isClient])
 
   return (
     <>
       {children}
-      <GlobalLoading />
+      {isClient && <GlobalLoading />}
     </>
   )
 }

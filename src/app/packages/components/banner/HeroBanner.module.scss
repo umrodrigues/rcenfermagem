@@ -17,19 +17,21 @@
     height: 100vh;
     min-height: 650px;
     padding-top: 0;
+    width: 100%;
   }
 
   @media (max-width: 768px) {
-    height: 100vh;
-    min-height: 600px;
+    height: 60vh;
+    min-height: 400px;
     padding-top: 0;
-    background: linear-gradient(135deg, #00693e, #004d2e);
+    background: linear-gradient(135deg, #00693e, #004d2e, #0a4d2c);
+    width: 100%;
   }
 
   @media (max-width: 630px) {
-    height: 100vh;
-    min-height: 600px;
-    max-height: 100vh;
+    height: 55vh;
+    min-height: 350px;
+    max-height: 55vh;
     padding-bottom: 0;
     margin-bottom: 0;
     overflow: hidden;
@@ -37,15 +39,17 @@
     align-items: center;
     justify-content: center;
     padding-top: 0;
-    background: linear-gradient(135deg, #00693e, #004d2e);
+    background: linear-gradient(135deg, #00693e, #004d2e, #0a4d2c);
+    width: 100%;
   }
 
   @media (max-width: 480px) {
-    height: 100vh;
-    min-height: 550px;
-    max-height: 100vh;
+    height: 50vh;
+    min-height: 300px;
+    max-height: 50vh;
     padding-top: 0;
-    background: linear-gradient(135deg, #00693e, #004d2e);
+    background: linear-gradient(135deg, #00693e, #004d2e, #0a4d2c);
+    width: 100%;
   }
 }
 
@@ -74,6 +78,16 @@
   min-height: inherit;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .backgroundImage {
@@ -88,19 +102,19 @@
 
   @media (max-width: 1024px) {
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: center 20% !important;
   }
 
   @media (max-width: 768px) {
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: center center !important;
     width: 100%;
     height: 100%;
   }
 
   @media (max-width: 480px) {
     object-fit: cover !important;
-    object-position: center 25% !important;
+    object-position: center center !important;
   }
 }
 
@@ -118,11 +132,11 @@
   background: rgba(0, 0, 0, 0.4);
 
   @media (max-width: 768px) {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
   }
 
   @media (max-width: 480px) {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -170,11 +184,13 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
   }
 }
 
@@ -189,11 +205,13 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    margin: 0.3rem 0;
   }
 
   @media (max-width: 480px) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin: 0.25rem 0;
   }
 }
 
@@ -209,14 +227,16 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 100%;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
   }
 }
 
@@ -232,13 +252,15 @@
   cursor: pointer;
 
   @media (max-width: 768px) {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 10px;
   }
 
   @media (max-width: 480px) {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
 }
 
@@ -267,13 +289,13 @@
   backdrop-filter: blur(10px);
 
   @media (max-width: 768px) {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 
   @media (max-width: 480px) {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -286,11 +308,11 @@
   left: 30px;
 
   @media (max-width: 768px) {
-    left: 20px;
+    left: 15px;
   }
 
   @media (max-width: 480px) {
-    left: 15px;
+    left: 10px;
   }
 }
 
@@ -298,10 +320,10 @@
   right: 30px;
 
   @media (max-width: 768px) {
-    right: 20px;
+    right: 15px;
   }
 
   @media (max-width: 480px) {
-    right: 15px;
+    right: 10px;
   }
 }
