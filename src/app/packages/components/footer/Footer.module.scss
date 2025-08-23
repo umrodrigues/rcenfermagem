@@ -151,6 +151,26 @@
     }
   }
 
+  .noticeSection {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(0, 138, 61, 0.1);
+
+    .noticeText {
+      color: #8baa9a;
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.4;
+      font-style: italic;
+    }
+  }
+
   .developmentSection {
     max-width: 1200px;
     margin-left: auto;
@@ -306,11 +326,27 @@
       }
     }
 
+    .noticeSection {
+      padding: 0.5rem 0;
+
+      .noticeText {
+        font-size: 0.75rem;
+      }
+    }
+
     .developmentSection {
       padding-top: 0.75rem;
 
       .developmentText {
         font-size: 0.75rem;
+      }
+    }
+
+    .noticeSection {
+      padding: 0.5rem 0;
+
+      .noticeText {
+        font-size: 0.7rem;
       }
     }
   }

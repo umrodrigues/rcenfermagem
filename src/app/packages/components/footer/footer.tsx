@@ -58,6 +58,12 @@ export default function Footer() {
           </div>
         </div>
         
+        <div className={styles.noticeSection}>
+          <span className={styles.noticeText}>
+            Atenção: Não aceitamos currículos para trabalhar via contato do site. Agradecemos a compreensão.
+          </span>
+        </div>
+        
         <div className={styles.developmentSection}>
           <span className={styles.developmentText}>
             Development by{' '}
