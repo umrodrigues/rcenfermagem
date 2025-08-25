@@ -30,7 +30,7 @@ export default function PartnerLogos() {
     <section className={`${styles.logoSection} ${isVisible ? styles.visible : ''}`}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Nossos Parceiros</h2>
+          <h2 className={styles.title}>Empresas parceiras</h2>
           <p className={styles.subtitle}>Empresas que confiam em nosso trabalho</p>
         </div>
         
