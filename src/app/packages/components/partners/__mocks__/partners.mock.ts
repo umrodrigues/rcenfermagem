@@ -3,5 +3,6 @@ export const partners = [
     { src: '/partners/dmc.jpg', alt: 'DMC' },
     { src: '/partners/jhomedica.jpg', alt: 'JHomedica' },
     { src: '/partners/lasermed.jpg', alt: 'Lasermed' },
-    { src: '/partners/med4.jpg', alt: 'Med4' },
+    { src: '/partners/med4.png', alt: 'Med4' },
+    { src: '/partners/pholias.png', alt: 'Pholias' },
   ]
