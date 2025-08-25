@@ -31,7 +31,7 @@ export default function PartnerLogos() {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Nossos Parceiros</h2>
-          <p className={styles.subtitle}>Empresas que confiam em nossa tecnologia</p>
+          <p className={styles.subtitle}>Empresas que confiam em nosso trabalho</p>
         </div>
         
         <div className={styles.logosGrid}>
