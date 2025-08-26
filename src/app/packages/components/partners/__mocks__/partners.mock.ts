@@ -5,4 +5,6 @@ export const partners = [
     { src: '/partners/lasermed.jpg', alt: 'Lasermed' },
     { src: '/partners/med4.png', alt: 'Med4' },
     { src: '/partners/pholias.png', alt: 'Pholias' },
+    { src: '/partners/vetor.jpg', alt: 'Vetor' },
+    { src: '/partners/suprimed.jpg', alt: 'Grupo Suprimed' },
   ]

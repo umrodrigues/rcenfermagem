@@ -52,7 +52,9 @@ export default function PartnerLogos() {
                   priority={index < 4}
                   style={{
                     objectFit: 'contain',
-                    objectPosition: 'center'
+                    objectPosition: 'center',
+                    maxWidth: '100%',
+                    maxHeight: '100%'
                   }}
                 />
                 <div className={styles.overlay}>
