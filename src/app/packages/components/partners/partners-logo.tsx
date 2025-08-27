@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styles from './PartnerLogos.module.scss'
 import { partners } from './__mocks__/partners.mock'
@@ -41,26 +42,28 @@ export default function PartnerLogos() {
               key={index}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={styles.logoWrapper}>
-                <Image 
-                  src={partner.src} 
-                  alt={partner.alt} 
-                  fill 
-                  sizes="(max-width: 768px) 140px, 180px"
-                  className={styles.logoImage}
-                  quality={95}
-                  priority={index < 4}
-                  style={{
-                    objectFit: 'contain',
-                    objectPosition: 'center',
-                    maxWidth: '100%',
-                    maxHeight: '100%'
-                  }}
-                />
-                <div className={styles.overlay}>
-                  <span className={styles.partnerName}>{partner.alt}</span>
+                             <Link href={partner.url} target="_blank" rel="noopener noreferrer">
+                <div className={styles.logoWrapper}>
+                  <Image 
+                    src={partner.src} 
+                    alt={partner.alt} 
+                    fill 
+                    sizes="(max-width: 768px) 140px, 180px"
+                    className={styles.logoImage}
+                    quality={95}
+                    priority={index < 4}
+                    style={{
+                      objectFit: 'contain',
+                      objectPosition: 'center',
+                      maxWidth: '100%',
+                      maxHeight: '100%'
+                    }}
+                  />
+                  <div className={styles.overlay}>
+                    <span className={styles.partnerName}>{partner.alt}</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
