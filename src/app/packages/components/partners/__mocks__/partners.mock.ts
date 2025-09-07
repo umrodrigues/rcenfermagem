@@ -7,4 +7,5 @@ export const partners = [
     { src: '/partners/pholias.png', alt: 'Pholias', url: 'https://pholias.com.br/?srsltid=AfmBOoqeWKGDV1XTpsUhz4C19t_wag1JczNW8IormfhmMx2u_lR9j3vB' },
     { src: '/partners/vetor.jpg', alt: 'Vetor', url: 'https://www.gamanpharma.com.br' },
     { src: '/partners/suprimed.jpg', alt: 'Grupo Suprimed', url: 'https://gruposuprimed.com.br' },
+    { src: '/partners/ciamed.jpg', alt: 'Ciamed', url: 'https://www.ciamed.com.br' },
   ]
