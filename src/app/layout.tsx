@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     'DC.description': 'Serviços especializados em enfermagem com qualidade e humanização',
     'DC.publisher': 'RC Enfermagem Para Você',
     'DC.contributor': 'RC Enfermagem Para Você',
-    'DC.date': new Date().toISOString(),
+    'DC.date': '2024-01-01T00:00:00.000Z',
     'DC.type': 'Service',
     'DC.format': 'text/html',
     'DC.identifier': 'https://rcenfermagemparavoce.com.br',

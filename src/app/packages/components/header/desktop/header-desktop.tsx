@@ -30,7 +30,7 @@ export default function HeaderDesktop() {
             </Link>
           </div>
           
-          <Link href="https://api.whatsapp.com/send?phone=5505184163243" target='_blank' className={styles.ctaButton}>
+          <Link href="https://api.whatsapp.com/send?phone=5505184163243&text=Ol%C3%A1%2C%20vim%20pelo%20contato%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%21" target='_blank' className={styles.ctaButton}>
             <FaWhatsapp className={styles.buttonIcon} />
             Atendimento Domiciliar
           </Link>

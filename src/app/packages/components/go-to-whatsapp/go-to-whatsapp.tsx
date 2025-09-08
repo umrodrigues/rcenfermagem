@@ -5,7 +5,8 @@ import styles from './GoToWhatsapp.module.scss';
 
 export const GoToWhatsapp = () => {
   const handleClick = () => {
-    window.open('https://api.whatsapp.com/send?phone=5505184163243', '_blank');
+    const message = encodeURIComponent('Olá, vim pelo contato do site e gostaria de mais informações!');
+    window.open(`https://api.whatsapp.com/send?phone=5505184163243&text=${message}`, '_blank');
   };
 
   return (

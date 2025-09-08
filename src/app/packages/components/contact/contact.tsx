@@ -45,7 +45,7 @@ export default function Contact() {
               <h2 className={styles.cardTitle}>Telefone</h2>
               <div className={styles.phoneLinks}>
                 <a
-                  href="https://api.whatsapp.com/send?phone=5505184163243"
+                  href="https://api.whatsapp.com/send?phone=5505184163243&text=Ol%C3%A1%2C%20vim%20pelo%20contato%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
@@ -53,7 +53,7 @@ export default function Contact() {
                   51 8416-3243 - Lucio
                 </a> 
                 <a
-                  href="https://api.whatsapp.com/send?phone=5505197822982"
+                  href="https://api.whatsapp.com/send?phone=5505197822982&text=Ol%C3%A1%2C%20vim%20pelo%20contato%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
