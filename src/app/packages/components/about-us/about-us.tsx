@@ -193,6 +193,7 @@ export default function AboutUs() {
                 <h3>Grasiele Costa Rodrigues</h3>
                 <div className={styles.memberBadges}>
                   <span className={styles.badge}>Sócia proprietária da RC ENFERMAGEM</span>
+                  <span className={styles.badge}>Enfermeira - COREN-RS 252593</span>
                 </div>
               </div>
               
