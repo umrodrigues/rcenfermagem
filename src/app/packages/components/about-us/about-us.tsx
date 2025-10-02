@@ -192,7 +192,7 @@ export default function AboutUs() {
               <div className={styles.memberHeader}>
                 <h3>Grasiele Costa Rodrigues</h3>
                 <div className={styles.memberBadges}>
-                  <span className={styles.badge}>Sócia proprietária da RC EDUCAÇÃO EM SAÚDE</span>
+                  <span className={styles.badge}>Sócia proprietária da RC ENFERMAGEM</span>
                 </div>
               </div>
               
@@ -273,8 +273,8 @@ export default function AboutUs() {
               <div className={styles.memberHeader}>
                 <h3>Lucio Rodrigo Lucca de Camargo</h3>
                 <div className={styles.memberBadges}>
-                  <span className={styles.badge}>Enfermeiro</span>
-                  <span className={styles.badge}>Sócio proprietário da RC Enfermagem</span>
+                  <span className={styles.badge}>Enfermeiro - COREN-RS 389656</span>
+                  <span className={styles.badge}>Sócio proprietária da RC ENFERMAGEM</span>
                 </div>
               </div>
               
