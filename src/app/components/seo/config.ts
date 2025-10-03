@@ -92,7 +92,7 @@ export const SEO_CONFIG = {
 
   analytics: {
     googleAnalytics: process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX',
-    googleTagManager: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX',
+    googleTagManager: process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WD5BFB65',
     facebookPixel: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || 'YOUR_PIXEL_ID',
     linkedinInsight: process.env.NEXT_PUBLIC_LINKEDIN_ID || 'YOUR_LINKEDIN_ID',
     hotjar: process.env.NEXT_PUBLIC_HOTJAR_ID || 'YOUR_HOTJAR_ID',

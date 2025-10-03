@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Providers } from "./components/Providers";
+import GTMHead from "./components/seo/analytics/GTMHead";
+import GTMBody from "./components/seo/analytics/GTMBody";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +106,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <GTMHead />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16967651340"
@@ -119,6 +122,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <GTMBody />
         <Providers>
           {children}
         </Providers>

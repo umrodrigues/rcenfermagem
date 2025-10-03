@@ -3,7 +3,7 @@
 import Script from 'next/script'
 
 export default function GoogleTagManager() {
-  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WD5BFB65'
 
   return (
     <>
