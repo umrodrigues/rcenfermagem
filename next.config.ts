@@ -33,6 +33,22 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://tagmanager.google.com https://*.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
+              "script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://googletagmanager.com https://tagmanager.google.com https://*.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
+              "style-src 'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com data:",
+              "img-src 'self' data: blob: https: https://www.googletagmanager.com https://googletagmanager.com https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://google.com https://googleads.g.doubleclick.net https://*.g.doubleclick.net https://www.gstatic.com https://ssl.gstatic.com",
+              "connect-src 'self' https://*.googletagmanager.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google-analytics.com https://ssl.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.g.doubleclick.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://google.com https://api.whatsapp.com",
+              "frame-src 'self' https://www.googletagmanager.com https://www.google.com https://td.doubleclick.net https://bid.g.doubleclick.net",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self' https://api.whatsapp.com",
+            ].join('; '),
+          },
         ],
       },
       {
