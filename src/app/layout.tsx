@@ -111,12 +111,6 @@ export default function RootLayout({
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16967651340"
           strategy="afterInteractive"
-          onLoad={() => {
-            console.log('[GTAG DEBUG] ✅ Google Ads Script (gtag.js) carregado!')
-          }}
-          onError={(e) => {
-            console.error('[GTAG DEBUG] ❌ Erro ao carregar gtag.js:', e)
-          }}
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
