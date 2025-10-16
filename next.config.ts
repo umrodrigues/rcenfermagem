@@ -36,16 +36,16 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Security-Policy',
             value: [
-              "default-src 'self';",
+              "default-src 'self' whatsapp:;",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.gstatic.com https://www.google.com https://tagmanager.google.com;",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com;",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com https://www.googletagmanager.com;",
               "font-src 'self' https://fonts.gstatic.com data:;",
-              "img-src 'self' data: blob: https://www.google-analytics.com https://ssl.gstatic.com https://www.gstatic.com https://www.google.com https://www.google.com.br https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com;",
-              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com https://www.google.com.br https://www.googleadservices.com https://api.whatsapp.com;",
-              "frame-src 'self' https://www.googletagmanager.com https://www.google.com;",
+              "img-src 'self' data: blob: https://www.google-analytics.com https://ssl.gstatic.com https://www.gstatic.com https://fonts.gstatic.com https://www.google.com https://www.google.com.br https://www.googletagmanager.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com;",
+              "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com https://www.google.com.br https://www.googleadservices.com https://api.whatsapp.com https://wa.me;",
+              "frame-src 'self' https://www.googletagmanager.com https://www.google.com https://wa.me;",
               "object-src 'none';",
               "base-uri 'self';",
-              "form-action 'self' https://api.whatsapp.com;",
+              "form-action 'self' https://api.whatsapp.com https://wa.me;",
               "upgrade-insecure-requests;"
             ].join(' '),
           },
