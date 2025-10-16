@@ -47,6 +47,7 @@ const nextConfig: NextConfig = {
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self' https://api.whatsapp.com",
+              "upgrade-insecure-requests",
             ].join('; '),
           },
         ],
