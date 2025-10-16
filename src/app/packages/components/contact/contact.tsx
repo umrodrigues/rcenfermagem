@@ -49,6 +49,17 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+                      (window as any).dataLayer.push({
+                        event: 'purchase',
+                        event_category: 'whatsapp',
+                        event_label: 'Contato - Lucio',
+                        value: 0
+                      });
+                      console.log('[WHATSAPP TRACKING] Evento disparado: Contato - Lucio');
+                    }
+                  }}
                 >
                   51 8416-3243 - Lucio
                 </a> 
@@ -57,6 +68,17 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.phoneLink}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+                      (window as any).dataLayer.push({
+                        event: 'purchase',
+                        event_category: 'whatsapp',
+                        event_label: 'Contato - Grasi',
+                        value: 0
+                      });
+                      console.log('[WHATSAPP TRACKING] Evento disparado: Contato - Grasi');
+                    }
+                  }}
                 >
                   51 9782-2982 - Grasi
                 </a>
